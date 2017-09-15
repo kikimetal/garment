@@ -11,15 +11,30 @@ import {
 export default class TakeruYamashita extends React.Component{
     constructor(props){
         super(props)
-        this.state = {hover: false}
+        this.state = {
+            ww: window.innerWidth,
+            wh: window.innerHeight,
+            hover: false
+        }
+        this.handleResize = this.handleResize.bind(this)
+    }
+    handleResize(){
+        this.setState({
+            ww: window.innerWidth,
+            wh: window.innerHeight,
+        })
+    }
+    componentDidMount() {
+        window.addEventListener('resize', this.handleResize)
+    }
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize)
     }
     render(){
         // svg setting
-        const WW = window.innerWidth
-        const WH = window.innerHeight
         const opacitySpring = spring(1, {stiffness: 60, damping: 8, precision: 0.06})
-        const strokeWidth = (WW/100) * 2 + 2
-        // mouseover animation
+        const strokeWidth = (this.state.ww / 100) * 2 + 2
+        // mouseover animation attr
         const animationAttr = {
             onMouseOver: () => this.setState({hover: true}),
             onMouseOut: () => this.setState({hover: false}),
@@ -27,21 +42,23 @@ export default class TakeruYamashita extends React.Component{
         return (
             <div className="TakeruYamashita">
                 <svg className="edge-color-lines">
-                    <Motion defaultStyle={{length: 0, opacity: 0}} style={{length: spring(WW - strokeWidth/2 , {stiffness: 22, damping: 11, precision: 0.01}), opacity: opacitySpring}}>
+                    <Motion defaultStyle={{length: 0, opacity: 0}} style={{length: spring(this.state.ww - strokeWidth/2 , {stiffness: 22, damping: 11, precision: 0.01}), opacity: opacitySpring}}>
                         {value => <line className="top" stroke="#46e" x1={0} y1={0} x2={value.length} y2={0} strokeWidth={strokeWidth} strokeOpacity={value.opacity} />}
                     </Motion>
-                    <Motion defaultStyle={{length: WW, opacity: 0}} style={{length: spring(0 + strokeWidth/2 , {stiffness: 22, damping: 11, precision: 0.01}), opacity: opacitySpring}}>
-                        {value => <line className="bottom" stroke="#c3b" x1={WW} y1={WH} x2={value.length} y2={WH} strokeWidth={strokeWidth} strokeOpacity={value.opacity} />}
+                    <Motion defaultStyle={{length: this.state.ww, opacity: 0}} style={{length: spring(0 + strokeWidth/2 , {stiffness: 22, damping: 11, precision: 0.01}), opacity: opacitySpring}}>
+                        {value => <line className="bottom" stroke="#c3b" x1={this.state.ww} y1={this.state.wh} x2={value.length} y2={this.state.wh} strokeWidth={strokeWidth} strokeOpacity={value.opacity} />}
                     </Motion>
-                    <Motion defaultStyle={{length: WH, opacity: 0}} style={{length: spring(0 + strokeWidth/2 , {stiffness: 22, damping: 11, precision: 0.01}), opacity: opacitySpring}}>
-                        {value => <line className="left" stroke="#fb3" x1={0} y1={WH} x2={0} y2={value.length} strokeWidth={strokeWidth} strokeOpacity={value.opacity} />}
+                    <Motion defaultStyle={{length: this.state.wh, opacity: 0}} style={{length: spring(0 + strokeWidth/2 , {stiffness: 22, damping: 11, precision: 0.01}), opacity: opacitySpring}}>
+                        {value => <line className="left" stroke="#fb3" x1={0} y1={this.state.wh} x2={0} y2={value.length} strokeWidth={strokeWidth} strokeOpacity={value.opacity} />}
                     </Motion>
-                    <Motion defaultStyle={{length: 0, opacity: 0}} style={{length: spring(WH - strokeWidth/2 , {stiffness: 22, damping: 11, precision: 0.01}), opacity: opacitySpring}}>
-                        {value => <line className="right" stroke="#fff" x1={WW} y1={0} x2={WW} y2={value.length} strokeWidth={strokeWidth} strokeOpacity={value.opacity} />}
+                    <Motion defaultStyle={{length: 0, opacity: 0}} style={{length: spring(this.state.wh - strokeWidth/2 , {stiffness: 22, damping: 11, precision: 0.01}), opacity: opacitySpring}}>
+                        {value => <line className="right" stroke="#fff" x1={this.state.ww} y1={0} x2={this.state.ww} y2={value.length} strokeWidth={strokeWidth} strokeOpacity={value.opacity} />}
                     </Motion>
                 </svg>
-                <div className="logo" {...animationAttr}></div>
-                <NavLink to="/garment-dev"><p className={`dive ${this.state.hover && "on"}`} {...animationAttr}>Dive!</p></NavLink>
+                <NavLink to="/garment-dev">
+                    <div className="logo" {...animationAttr}></div>
+                    <p className={`dive ${this.state.hover && "on"}`} {...animationAttr}>Dive!</p>
+                </NavLink>
             </div>
         )
     }
