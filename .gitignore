@@ -3,3 +3,4 @@ node_modules
 __dist
 memo.md
 image
+image/**/*
