@@ -1,0 +1,93 @@
+.TakeruYamashita
+    box-sizing: border-box
+
+    display: flex
+    flex-flow: column wrap
+    justify-content: center
+    align-items: center
+
+    position: fixed
+    top: 0
+    left: 0
+
+    width: 100%
+    height: 100%
+
+    padding: 3vw
+
+    background: #eee
+
+    &::after
+        content: ""
+        box-sizing: border-box
+        display: block
+        position: absolute
+        top: 0.5vw
+        left: 0.5vw
+        right: 0.5vw
+        bottom: 0.5vw
+        border: 1px dashed
+        border-top-color: #bbf
+        border-left-color: #fdc
+        border-right-color: #ccc
+        border-bottom-color: #fbc
+        pointer-events: none
+        animation: fade-in 3s ease both
+        @keyframes fade-in
+            from
+                opacity: 0
+            to
+                opacity: 1
+    .logo
+        display: block
+        position: relative
+        width: 200px
+        max-width: 50vw
+        height: 150px
+        max-height: 50vw
+        background-image: url("/image/logo.png")
+        background-position: center
+        background-repeat: no-repeat
+        background-size: contain
+        cursor: pointer
+
+    .dive
+        width: 200px
+        max-width: 50vw
+        padding: 0.5em 0
+        text-align: center
+        color: #888
+        border: 1px solid
+        border-radius: 3em
+        cursor: pointer
+        transition: 0.3s ease
+        &.on
+            color: #333
+            transform: scale(1.04)
+
+
+    .edge-color-lines
+        box-sizing: content-box
+        display: block
+        position: fixed
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        z-index: -1
+
+        line
+            display: block
+            position: absolute
+        .top
+            top: 0
+            left: 0
+        .left
+            top: 0
+            left: 0
+        .right
+            top: 0
+            right: 0
+        .bottom
+            left: 0
+            bottom: 0
