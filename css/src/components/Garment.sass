@@ -1,0 +1,30 @@
+.Garment
+
+    .grid
+        display: grid
+        // grid-template: "header" 90px "side" 50px "main" 300px "footer" 60px / 1fr
+        grid-template-columns: 70px 1fr 70px
+        grid-template-rows: 200px auto 70px
+        > .header
+            // grid-area: header
+            grid-column: 1 / 4
+            grid-row: 1 / 2
+            background: pink
+        > .main
+            // grid-area: main
+            grid-column: 1 / 4
+            grid-row: 2 / 3
+            background: skyblue
+        > .side
+            // grid-area: side
+            grid-column: 
+            grid-row: 2 / 3
+            background: coral
+        > .footer
+            grid-row: 3 / 4
+            grid-row: 2 / 3
+            // grid-area: footer
+            background: plum
+
+        @media screen and (min-width: 500px)
+            grid-template: "header header" 120px "main side" 300px "footer footer" 100px / 1fr 120px
