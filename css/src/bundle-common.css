@@ -57,11 +57,21 @@ ul.stuffed li {
 /*common----------*/
 html, body {
   background: #fafafa;
-  color: #333;
+  color: #555;
 }
 
 a {
   text-decoration: none;
+}
+
+br.lg-br {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  br.lg-br {
+    display: inline;
+  }
 }
 
 /* animation */

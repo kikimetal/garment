@@ -7,8 +7,9 @@ import {
     Switch,
     Redirect
 } from 'react-router-dom'
+import DocumentTitle from "react-document-title"
 
-import TakeruYamashita from "./TakeruYamashita"
+import Entrance from "./Entrance"
 import Garment from "./Garment"
 import NotFound from "./NotFound"
 
@@ -19,10 +20,11 @@ export default class App extends React.Component{
     render(){
         return (
             <div>
+                <DocumentTitle title="TakeruYamashita" />
                 <BrowserRouter>
                     <Switch>
-                        <Route exact path="/" component={TakeruYamashita} />
-                        <Route exact path="/garment-dev" component={Garment} />
+                        <Route exact path="/" component={Entrance} />
+                        <Route path="/garment-dev" component={Garment} />
                         <Route component={NotFound} />
                     </Switch>
                 </BrowserRouter>

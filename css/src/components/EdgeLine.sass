@@ -1,16 +1,15 @@
 .EdgeLine
-    box-sizing: content-box
     display: block
     position: fixed
     width: 100%
     height: 100%
     top: 0
     left: 0
+    right: 0
+    bottom: 0
     pointer-events: none
 
     g
-        display: block
-        position: absolute
         .dash
             // stroke-dasharray: 4.3 4.2 4.3 4 4.4 4.4 4 4.2 4.2 4 4.3 4.2 4.5 4.3 4 4.3 4.5
             stroke-dasharray: 4.3 3.4 4.4 3.3 4.2 3.4 4.1 3.2 4.2 3.4 4.3 3.2 4.4 3.3 4.1 3.3 4.4
@@ -18,9 +17,9 @@
             top: 0
             left: 0
             .line
-                stroke: #46e
+                stroke: #c3b
             .dash
-                stroke: #bbf
+                stroke: #fbc
         &.left
             top: 0
             left: 0
@@ -39,6 +38,6 @@
             left: 0
             bottom: 0
             .line
-                stroke: #c3b
+                stroke: #3973e3
             .dash
-                stroke: #fbc
+                stroke: #a5c5f6

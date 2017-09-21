@@ -1,11 +1,11 @@
 import React from "react"
 import {Link} from "react-router-dom"
-import Button from "./Button"
+import SvgButton from "./SvgButton"
 
 const NotFound = () => (
     <div className="NotFound">
         <p className="message">Sorry, Page Not Found...</p>
-        <Link to="/"><Button>Return to Top</Button></Link>
+        <Link to="/"><SvgButton>Return to Top</SvgButton></Link>
     </div>
 )
 
