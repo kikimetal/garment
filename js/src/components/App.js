@@ -12,6 +12,7 @@ import DocumentTitle from "react-document-title"
 import Entrance from "./Entrance"
 import Garment from "./Garment"
 import NotFound from "./NotFound"
+import SvgButton from "./SvgButton"
 
 export default class App extends React.Component{
     constructor(props){
@@ -19,8 +20,9 @@ export default class App extends React.Component{
     }
     render(){
         return (
-            <div>
+            <div className="App">
                 <DocumentTitle title="TakeruYamashita" />
+
                 <BrowserRouter>
                     <Switch>
                         <Route exact path="/" component={Entrance} />
@@ -28,6 +30,7 @@ export default class App extends React.Component{
                         <Route component={NotFound} />
                     </Switch>
                 </BrowserRouter>
+
             </div>
         )
     }

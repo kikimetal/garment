@@ -8,6 +8,8 @@ class TransitionMotionDemo extends React.Component {
             items: [{ key: '1' }, { key: '2' }, { key: '3' }],
         };
         this.deleteElem = this.deleteElem.bind(this);
+        this.willLeave = this.willLeave.bind(this);
+        this.willEnter = this.willEnter.bind(this);
     }
 
     deleteElem() {
@@ -17,17 +19,19 @@ class TransitionMotionDemo extends React.Component {
             items,
         });
     }
-
-    // willLeave() {
-    //     return { width: spring(0), height: spring(0) }
-    // }
+    willLeave() {
+        return { width: spring(0), height: spring(0) }
+    }
+    willEnter() {
+        // return { width: spring(0), height: spring(0) }
+    }
 
     render() {
-        const willLeave = () => ({ width: spring(0), height: spring(0),})
         return (
             <div>
                 <TransitionMotion
-                    willLeave={willLeave}
+                    willLeave={this.willLeave}
+                    willEnter={this.willEnter}
                     defaultStyles={this.state.items.map(item => ({
                         key: item.key,
                         style: { width: 0, height: 0 },

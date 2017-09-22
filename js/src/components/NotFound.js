@@ -5,7 +5,7 @@ import SvgButton from "./SvgButton"
 const NotFound = () => (
     <div className="NotFound">
         <p className="message">Sorry, Page Not Found...</p>
-        <Link to="/"><SvgButton>Return to Top</SvgButton></Link>
+        <Link to="/"><SvgButton>Top</SvgButton></Link>
     </div>
 )
 

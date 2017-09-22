@@ -19,6 +19,11 @@
   color: white;
 }
 
+.Concept {
+  padding: 100px 0;
+  font-size: 30px;
+}
+
 .Designer {
   display: grid;
   grid-template-columns: 100%;
@@ -103,6 +108,8 @@
     grid-row: 2 / 5;
     padding: 2em;
     line-height: 2;
+    background: linear-gradient(135deg, #000, #444);
+    color: #999;
   }
 }
 
@@ -323,7 +330,6 @@
 }
 
 .Entrance {
-  background: #fafafa;
   color: #333;
   --bar-height: 30px;
 }
@@ -701,6 +707,14 @@
     grid-column: 1 / 4;
     grid-row: 3;
   }
+}
+
+.Nav {
+  background: #9cb7ff;
+}
+
+.Nav ul li {
+  display: inline-block;
 }
 
 .NotFound {

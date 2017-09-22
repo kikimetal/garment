@@ -16,7 +16,9 @@ export default class Entrance extends React.Component{
 
                 <ScrollToTopOnMount />
 
-                <div className="header">www.takeruyamashita.com</div>
+                <header className="header">
+                    <a href="http://www.takeruyamashita.com">www.takeruyamashita.com</a>
+                </header>
 
                 <div className="main">
                     <svg className="dash-top">

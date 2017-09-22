@@ -1,64 +1,60 @@
-import React from 'react';
-import { TransitionMotion, spring } from 'react-motion';
+import React from 'react'
+import { TransitionMotion, spring } from 'react-motion'
 
-
-const willEnter = () => ({
-    opacity: 0,
-    // scale: 0.7
-    blur: 20,
-    // translate: 60
-});
-
-const willLeave = () => ({
-    // opacity: spring(-1, {stiffness: 2, damping: 5, precision: 0.1}),
-    // scale: spring(1.3)
-    // blur: spring(20, {stiffness: 7, damping: 5, precision: 0.05}),
-    // translate: spring(-100)
-});
-
-const springOption = {stiffness: 86, damping: 20, precision: 0.5}
-
-const getStyles = () => ({
-    opacity: spring(1, springOption),
-    // scale: spring(1)
-    blur: spring(0, springOption),
-    // translate: spring(0, springOption),
-});
-
-const RouteTransition = ({ children: child, pathname }) => (
-    <TransitionMotion
-        styles={ [{
-            key: pathname,
-            style: getStyles(),
-            data: { child }
-        }] }
-        willEnter={ willEnter }
-
-        >
-        { (interpolated) =>
-            <div>
-                {interpolated.map(({ key, style, data }) =>
-                    <div
-                        key={ `${key}-transition` }
-                        style={ {
-                            minHeight: "100vh",
-                            position: "absolute",
-                            width: "100%",
-                            opacity: style.opacity,
-                            transform: `translateY(${style.translate}px)`,
-                            filter: `blur(${style.blur}px)`,
-                        } }
-                        >
-                        { data.child }
-                    </div>
-                )}
-            </div>
+export default class TransitionMotionDemo extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            items: [{ key: '1' }, { key: '2' }, { key: '3' }],
         }
-    </TransitionMotion>
-)
+        this.deleteElem = this.deleteElem.bind(this)
+        this.willLeave = this.willLeave.bind(this)
+        this.willEnter = this.willEnter.bind(this)
+    }
 
-// filter: `blur(${style.blur}px)`
+    deleteElem() {
+        const items = this.state.items
+        items.pop()
+        this.setState({
+            items,
+        })
+    }
+    willLeave() {
+        return { width: spring(0), height: spring(0) }
+    }
+    willEnter() {
+        // return { width: spring(0), height: spring(0) }
+    }
 
-// transform: `scale(${style.scale})`
-
-export default RouteTransition;
+    render() {
+        return (
+            <div>
+                <TransitionMotion
+                    willLeave={this.willLeave}
+                    willEnter={this.willEnter}
+                    defaultStyles={this.state.items.map(item => ({
+                        key: item.key,
+                        style: { width: 0, height: 0 },
+                    }))}
+                    styles={this.state.items.map(item => ({
+                        key: item.key,
+                        style: { width: spring(1000), height: spring(100) },
+                    }))}>
+                    {interpolatedStyles =>
+                        <div>
+                            {interpolatedStyles.map(config => {
+                                return (
+                                    <div key={config.key} style={{ border: '1px solid', height: config.style.height, width: config.style.width, fontSize: '40px' }}>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    }
+                </TransitionMotion>
+                <button onClick={this.deleteElem}>
+                    ここを押すと最後の要素の削除が始まってwillLeaveアニメーションスタート
+                </button>
+            </div>
+        )
+    }
+}

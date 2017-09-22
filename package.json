@@ -1,5 +1,5 @@
 {
-  "name": "react-practice",
+  "name": "garment",
   "version": "1.0.0",
   "description": "garment site",
   "repository": {
@@ -21,6 +21,7 @@
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
     "del": "^3.0.0",
+    "eslint": "^4.7.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-clean-css": "^3.8.0",
@@ -33,6 +34,7 @@
     "react-dom-factories": "^1.0.1",
     "react-router-dom": "^4.2.2",
     "react-scroll": "^1.5.4",
+    "react-static-container": "^1.0.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
@@ -56,17 +58,12 @@
       "browser": true,
       "node": true
     },
-    "eslintIgnore": [
-      ".git",
-      ".gitignore",
-      "__dist",
-      "node_modules"
-    ],
     "parserOptions": {
-      "ecmaVersion": 7,
+      "ecmaVersion": 8,
       "sourceType": "module",
       "ecmaFeatures": {
-        "jsx": true
+        "jsx": true,
+        "experimentalObjectRestSpread": true
       }
     }
   }
