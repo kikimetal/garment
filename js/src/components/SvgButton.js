@@ -77,6 +77,7 @@ SvgButton.defaultProps = {
     shapeColorHover: "#666",
     textColor: null,
     textColorHover: null,
+    letterSpaceing: "3px",
 }
 
 // <line className="underline" x1="0" y1={size * 2.5} x2={width} y2={size * 2.5} stroke="red" strokeWidth="18" />

@@ -16,7 +16,15 @@ export default class Entrance extends React.Component{
 
                 <ScrollToTopOnMount />
 
+                <div className="header">www.takeruyamashita.com</div>
+
                 <div className="main">
+                    <svg className="dash-top">
+                        <line className="" stroke="dimgrey" strokeWidth={1} x1={0} y1={4} x2={window.innerWidth} y2={4} />
+                    </svg>
+                    <svg className="dash-bottom">
+                        <line className="" stroke="dimgrey" strokeWidth={1} x1={0} y1={4} x2={window.innerWidth} y2={4} />
+                    </svg>
                     <NavLink to="/garment-dev">
                         <div className="logo"></div>
                         <SvgButton className="enter">Enter</SvgButton>
@@ -24,12 +32,10 @@ export default class Entrance extends React.Component{
                 </div>
 
                 <footer className="footer">
-                    <NavLink to="/garment-dev">
-                        <SvgButton shapeColorHover="#eee">Brand</SvgButton>
-                    </NavLink>
-
-                    <SvgButton shapeColorHover="#eee">PageTop</SvgButton>
-                    <span style={{padding: "1em 0"}}>Other informations...</span>
+                    <SvgButton size={15} shapeColorHover="#eee">Contact</SvgButton>
+                    <SvgButton size={15} shapeColorHover="#eee">Terms of use</SvgButton>
+                    <SvgButton size={15} shapeColorHover="#eee">Pravacy policy</SvgButton>
+                    <span className="copyright">copyright &copy; 2017 Maylily Co., Ltd.</span>
                 </footer>
 
             </div>
