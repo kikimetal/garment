@@ -5,6 +5,7 @@ import {BrowserRouter, Route, NavLink, Switch, Redirect} from 'react-router-dom'
 import EdgeLine from "./EdgeLine"
 import SvgButton from "./SvgButton"
 import ScrollToTopOnMount from "./ScrollToTopOnMount"
+import Footer from "./Footer"
 
 export default class Entrance extends React.Component{
     constructor(props){
@@ -33,12 +34,7 @@ export default class Entrance extends React.Component{
                     </NavLink>
                 </div>
 
-                <footer className="footer">
-                    <SvgButton size={15} shapeColorHover="#eee">Contact</SvgButton>
-                    <SvgButton size={15} shapeColorHover="#eee">Terms of use</SvgButton>
-                    <SvgButton size={15} shapeColorHover="#eee">Pravacy policy</SvgButton>
-                    <span className="copyright">copyright &copy; 2017 Maylily Co., Ltd.</span>
-                </footer>
+                <Footer/>
 
             </div>
         )

@@ -1,0 +1,50 @@
+.Grid
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: 260px auto auto 220px
+    grid-gap: 2px
+    background: #ccc
+    > div
+        display: flex
+        flex-flow: column nowrap
+        justify-content: center
+        align-items: center
+        background: #fafafa
+    .header
+        grid-column: 1
+        grid-row: 1
+        // background: pink
+    .main
+        grid-column: 1
+        grid-row: 3
+        // background: skyblue
+        p
+            padding: 1em
+            line-height: 1.6
+    .side
+        grid-column: 1
+        grid-row: 2
+        // background: coral
+    .footer
+        grid-row: 1
+        grid-row: 4
+        // background: plum
+
+    @media screen and (min-width: 500px)
+        // grid-template: "header header" 120px "main side" 300px "footer footer" 100px / 1fr 120px
+        grid-template-columns: 250px 1fr 10fr
+        grid-template-rows: 300px auto 200px
+        > div
+            overflow: hidden
+        .header
+            grid-column: 1 / 4
+            grid-row: 1 / 2
+        .main
+            grid-column: 3 / 4
+            grid-row: 2
+        .side
+            grid-column: 1 / 3
+            grid-row: 2
+        .foot
+            grid-column: 1 / 4
+            grid-row: 3

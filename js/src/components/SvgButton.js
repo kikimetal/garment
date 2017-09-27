@@ -5,29 +5,52 @@ export default class SvgButton extends React.Component{
         super(props)
         this.state = {
             hover: false,
-            strokeWidth: null,
+            ww: window.innerWidth,
+            timeoutId: null,
             shapeColor: this.props.color || this.props.shapeColor,
             textColor: this.props.color || this.props.textColor || this.props.shapeColor,
         }
+        this.handleResize = this.handleResize.bind(this)
+    }
+    handleResize(){
+        this.setState({
+            ww: window.innerWidth,
+        })
+    }
+    componentDidMount() {
+        window.addEventListener('resize', this.handleResize)
+    }
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize)
     }
     render(){
-        const size = this.props.size
-        const width = this.props.width
-        const padding = this.props.size * 0.9
+        const ww = this.state.ww
+        let size = this.props.size
+        let width = this.props.width
+        size = ww > 640
+            ? size
+            : ww > 375
+                ? size * 0.76
+                : size * 0.65
+        width = ww > 640
+            ? width
+            : ww > 375
+                ? width * 0.57
+                : width * 0.48
+        const padding = ww > 640 ? size * 0.9 : size * 0.7
         const height = Math.floor(size + padding * 2) + 1
         const innerText = this.props.children || "Hover"
 
         const strokeWidthMin = 2
-        const strokeWidthMax = this.props.size * 1.5
+        const strokeWidthMax = size * 1.4
 
-        const underlineScale = 0.5
+        const underlineScale = ww > 640 ? 0.5 : 0.4
         const strokeDashoffset = this.state.hover ? 0 : -1 * (width + height + (width*(1 - underlineScale))/2)
         const strokeDasharray = this.state.hover ? 0 : `${width * underlineScale} ${width*2 + height*2}`
 
         const handleMouseOut = () => {
             this.setState({
                 hover: false,
-                strokeWidth: strokeWidthMax,
                 shapeColor: this.props.color || this.props.shapeColor,
                 textColor: this.props.color || this.props.textColor || this.props.shapeColor,
             })
@@ -36,15 +59,18 @@ export default class SvgButton extends React.Component{
         const handleMouseOver = () => {
             this.setState({
                 hover: true,
-                strokeWidth: strokeWidthMin,
                 shapeColor: this.props.colorHover || this.props.color || this.props.shapeColorHover || this.state.shapeColor,
                 textColor: this.props.colorHover || this.props.color || this.props.textColorHover || this.props.shapeColorHover || this.state.textColor,
             })
         }
 
         const handleTouchStart = () => {
-            setTimeout(handleMouseOut, 500)
+            clearTimeout(this.state.timeoutId)
+            const timeoutId = setTimeout(handleMouseOut, 1000)
             handleMouseOver()
+            this.setState({
+                timeoutId: timeoutId,
+            })
         }
 
         const handleTouchEnd = () => {
@@ -61,7 +87,7 @@ export default class SvgButton extends React.Component{
             onTouchEnd={handleTouchEnd}
             onTouchCancel={handleTouchEnd}>
                 <svg height={height} width={width}>
-                    <rect className="shape" stroke={this.state.shapeColor} strokeDasharray={strokeDasharray} strokeWidth={this.state.strokeWidth || strokeWidthMax} width={width} height={height} strokeDashoffset={strokeDashoffset} />
+                    <rect className="shape" stroke={this.state.shapeColor} strokeDasharray={strokeDasharray} strokeWidth={this.state.hover ? strokeWidthMin : strokeWidthMax} width={width} height={height} strokeDashoffset={strokeDashoffset} />
                     <text className="text" fill={this.state.textColor} x={width / 2} y={size + padding - 2} textAnchor="middle" fontSize={size} width={width}>{innerText}</text>
                 </svg>
             </div>
@@ -73,13 +99,11 @@ SvgButton.defaultProps = {
     width: 200,
     color: null, // 強制力大
     colorHover: null, // 強制力大
-    shapeColor: "#aaa",
-    shapeColorHover: "#666",
+    shapeColor: "#888",
+    shapeColorHover: "#555",
     textColor: null,
     textColorHover: null,
     letterSpaceing: "3px",
 }
 
-// <line className="underline" x1="0" y1={size * 2.5} x2={width} y2={size * 2.5} stroke="red" strokeWidth="18" />
-
-// <div className="text">{innerText}</div>
+// <text className="text" fill={this.state.textColor} x={width / 2} y={size + padding - 2} textAnchor="middle" fontSize={size} width={width}>{innerText}</text>

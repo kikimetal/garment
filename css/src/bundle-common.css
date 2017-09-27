@@ -32,7 +32,6 @@ html {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  background-color: #faf6ec;
   color: #584b4f;
   font-family: "Helvetica Neue", Helvetica, arial, freesans, clean, sans-serif;
   font-size: 16px;
@@ -55,11 +54,6 @@ ul.stuffed li {
 /*----myreset*/
 
 /*common----------*/
-html, body {
-  background: #444;
-  color: #555;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -69,9 +63,16 @@ br.lg-br {
   display: none;
 }
 
+br.mobile {
+  display: inline;
+}
+
 @media screen and (min-width: 600px) {
   br.lg-br {
     display: inline;
+  }
+  br.mobile {
+    display: none;
   }
 }
 

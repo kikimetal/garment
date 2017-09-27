@@ -18,6 +18,9 @@ export default class App extends React.Component{
     constructor(props){
         super(props)
     }
+    componentWillMount(){
+        document.body.style.background = "#444"
+    }
     render(){
         return (
             <div className="App">
