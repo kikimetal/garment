@@ -6,6 +6,7 @@ import EdgeLine from "./EdgeLine"
 import SvgButton from "./SvgButton"
 import ScrollToTopOnMount from "./ScrollToTopOnMount"
 import Footer from "./Footer"
+import DelayLink from "./DelayLink"
 
 export default class Entrance extends React.Component{
     constructor(props){
@@ -23,15 +24,15 @@ export default class Entrance extends React.Component{
 
                 <div className="main">
                     <svg className="dash-top">
-                        <line className="" stroke="dimgrey" strokeWidth={1} x1={0} y1={4} x2={window.innerWidth} y2={4} />
+                        <line stroke="dimgrey" strokeWidth={1} x1={0} y1={4} x2={window.innerWidth} y2={4} />
                     </svg>
                     <svg className="dash-bottom">
-                        <line className="" stroke="dimgrey" strokeWidth={1} x1={0} y1={4} x2={window.innerWidth} y2={4} />
+                        <line stroke="dimgrey" strokeWidth={1} x1={0} y1={4} x2={window.innerWidth} y2={4} />
                     </svg>
-                    <NavLink to="/garment-dev">
+                    <DelayLink href="/garment-dev">
                         <div className="logo"></div>
                         <SvgButton className="enter">Enter</SvgButton>
-                    </NavLink>
+                    </DelayLink>
                 </div>
 
                 <Footer/>

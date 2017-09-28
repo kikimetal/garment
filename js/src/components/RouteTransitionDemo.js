@@ -27,7 +27,7 @@ const getStyles = () => ({
     // scale: spring(1, springOption),
 });
 
-const RouteTransition = ({ children: child, pathname }) => (
+const RouteTransition = ({ children: child, pathname, className}) => (
     <TransitionMotion
         styles={ [{
             key: pathname,
@@ -40,7 +40,7 @@ const RouteTransition = ({ children: child, pathname }) => (
             <div>
                 {interpolated.map(({ key, style, data }) =>
                     <div
-                        className="RouteTransitionContainer"
+                        className={`RouteTransitionContainer ${className}`}
                         key={ `${key}-transition` }
                         style={{
                             opacity: style.opacity,

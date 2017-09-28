@@ -2,58 +2,32 @@ import React from "react"
 import PropTypes from "prop-types"
 import {NavLink} from "react-router-dom"
 import SvgButton from "./SvgButton"
+import DelayLink from "./DelayLink"
 
 export default class GarmentNav extends React.Component{
     constructor(props){
         super(props)
-        this.state = {
-            hiddenTimeoutId: null,
-            disableTimeoutId: null,
-            hidden: false,
-            disable: false,
-        }
-        this.handleTouch = this.handleTouch.bind(this)
-    }
-    handleTouch(){
-        clearTimeout(this.state.hiddenTimeoutId)
-        clearTimeout(this.state.disableTimeoutId)
-        const hiddenTimeoutId = setTimeout(()=>{
-            this.setState({
-                hidden: true,
-                disable: true,
-            })
-        }, 2000)
-        const disableTimeoutId = setTimeout(()=>{
-            this.setState({
-                disable: false
-            })
-        }, 300)
-        this.setState({
-            hiddenTimeoutId: hiddenTimeoutId,
-            disableTimeoutId: disableTimeoutId,
-            hidden: false,
-        })
-    }
-    componentDidMount(){
-        window.addEventListener("touchstart", this.handleTouch)
-        window.addEventListener("touchmove", this.handleTouch)
-    }
-    componentWillUnmount(){
-        window.addEventListener("touchstart", this.handleTouch)
-        window.addEventListener("touchmove", this.handleTouch)
     }
     render(){
         const path = this.props.path
-        const hidden = this.state.hidden ? "hidden" : ""
-        const disable = this.state.disable ? "disable" : ""
-        const w = 160
+        const w = 230 // width
+        const isShow = this.props.show ? "show" : "hide"
+        const hideNav = this.props.onClickHideNav
+        const hideNavDelay = this.props.onClickHideNavDelay
+        const colorAttr = {
+            color: "#666",
+            colorHover: "#333",
+        }
         return (
-            <nav className={`GarmentNav ${hidden} ${disable}`}>
+            <nav className={`GarmentNav ${isShow}`}>
                 <ul>
-                    <li><NavLink to={path}><SvgButton width={w} color="#333">HOME</SvgButton></NavLink></li>
-                    <li><NavLink to={`${path}/product`}><SvgButton width={w} color="#333">PRODUCT</SvgButton></NavLink></li>
-                    <li><NavLink to={`${path}/story`}><SvgButton width={w} color="#333">STORY</SvgButton></NavLink></li>
-                    <li><a href="/"><SvgButton width={w} color="#333">SHOP</SvgButton></a></li>
+                    <li className="margin" onClick={hideNav}></li>
+                    <li><NavLink to={`${path}/home`} onClick={hideNavDelay}><SvgButton {...colorAttr}>Home</SvgButton></NavLink></li>
+                    <li><NavLink to={`${path}/product`} onClick={hideNavDelay}><SvgButton {...colorAttr}>Products</SvgButton></NavLink></li>
+                    <li><NavLink to={`${path}/story`} onClick={hideNavDelay}><SvgButton {...colorAttr}>Story</SvgButton></NavLink></li>
+                    <li><NavLink to={`${path}/story`} onClick={hideNavDelay}><SvgButton {...colorAttr}>Instagram</SvgButton></NavLink></li>
+                    <li><DelayLink href="/"><SvgButton {...colorAttr}>SHOP</SvgButton></DelayLink></li>
+                    <li className="margin" onClick={hideNav}></li>
                 </ul>
             </nav>
         )
@@ -61,4 +35,7 @@ export default class GarmentNav extends React.Component{
 }
 GarmentNav.propTypes = {
     path: PropTypes.string.isRequired,
+}
+GarmentNav.defaultProps = {
+    show: true,
 }

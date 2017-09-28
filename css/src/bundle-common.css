@@ -54,6 +54,14 @@ ul.stuffed li {
 /*----myreset*/
 
 /*common----------*/
+html, body {
+  --cyan: #58acde;
+  --magenta: #de4abd;
+  --yellow: #f0c93e;
+  --filter: #c3c3c3;
+  --garment-bg-color: #fafafa;
+}
+
 a {
   text-decoration: none;
   color: inherit;

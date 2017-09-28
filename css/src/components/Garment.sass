@@ -2,7 +2,34 @@
     .RouteTransitionContainer
         position: absolute
         width: 100%
-        // min-height: 100vh
+        overflow-x: hidden
+    .blur-container > *
+        transition: 0.9s
+        transform-origin: center
+    .blur-container.on > *
+        filter: blur(12px) !important
+        transform: scaleX(1.02) !important
+
+    .nav-btn
+        position: fixed
+        top: 10px
+        left: 0
+        right: 0
+        margin: 0 auto
+        width: 1.1em
+        padding: 0.4em
+        // background: pink
+        // border: 1px solid
+        border-radius: 0.2em
+        text-align: center
+        font-size: 22px
+        cursor: pointer
+        z-index: 1000
+        transition: 0.3s
+        &.hide
+            transform: translateY(-10px)
+            opacity: 0
+            pointer-events: none
 
     .footer
         display: flex

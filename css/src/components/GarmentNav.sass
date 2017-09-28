@@ -1,26 +1,39 @@
 .GarmentNav
-    position: fixed
-    top: 15px
-    left: 0
-    width: 100%
-    background: transparent
-    transition: 0.3s ease
-    z-index: 999
-    &.disable
-        pointer-events: none
-    &.hidden
-        transition: 0.6s ease
-        top: 0
-        opacity: 0
-
     ul
         display: flex
-        flex-flow: row wrap
+        flex-flow: column wrap
         justify-content: center
+        align-items: center
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100vh
+        background: rgba(240, 240, 240, 0.78)
+        // opacity: 1
+        z-index: 999
+        pointer-events: none
+        transition: 0.3s
         li
+            pointer-events: auto
+            flex: 0 1 auto
+            transition: 0.3s ease
+            transform-origin: 50% 68%
+            cursor: pointer
+        li.margin
+            width: 100%
             flex: 1 1 auto
-    @media screen and (min-width: 375px)
+        li.margin:last-child
+            flex: 1 0 16vh
+    &.hide
         ul
+            background: rgba(240, 240, 240, 0)
+            li
+                transform: scale(0)
+                pointer-events: none
+
+    @media screen and (min-width: 375px)
+        // ul
             padding: 0 15px
     @media screen and (min-width: 640px)
         top: 10px

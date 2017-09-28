@@ -13,14 +13,21 @@
         border-radius: 50%
     .putLightly
         background: inherit
-        transition: 0.3s ease
+        box-sizing: border-box
+        border: 1px solid
+        transition: 0.2s ease
+        z-index: 0
     .putLightly.on
-        transform: scale(1.2)
+        border: none
+        transform: scale(1.4)
+        z-index: 1
+    &.mobile
+        .putLightly.on
+            transform: scale(2)
     .spread
         background: inherit
         pointer-events: none
     .spread.on
-        // transform: scale(16)
         opacity: 0
         filter: blur(1px)
         transition: 0.6s ease

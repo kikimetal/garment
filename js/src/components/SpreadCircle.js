@@ -13,31 +13,35 @@ export default class SpreadCircle extends React.Component{
         this.spread = this.spread.bind(this)
     }
     putLightlyCancel(){
-        this.setState({putLightly: false})
-    }
-    putLightly(){
-        if (this.state.disable) return
         this.setState({
-            putLightly: true,
-            spread: false,
+            putLightly: false,
         })
     }
-    spread(){
+    putLightly(e){
+        e.preventDefault()
+        this.setState({
+            putLightly: true,
+        })
+    }
+    spread(e){
+        e.preventDefault()
         if (this.state.disable) {
-            this.setState({putLightly: false})
-            return
+            return this.setState({
+                putLightly: false,
+                disable: false,
+            })
         }
         this.setState({
             putLightly: false,
             spread: true,
-            disable: true
+            disable: true,
         })
         setTimeout(()=>{
             this.setState({
                 disable: false,
                 spread: false,
             })
-        }, 1000)
+        }, 700)
     }
     render(){
         const r2 = this.props.r * 2
@@ -46,11 +50,13 @@ export default class SpreadCircle extends React.Component{
             height: r2,
             background: this.props.color,
         }, this.props.style)
+
         const vmax = window.innerHeight > window.innerWidth ? window.innerHeight : window.innerWidth
         const spreadOnStyle = this.state.spread ? {transform: `scale(${vmax / r2})`} : {}
+        const putLightlyStyle = this.props.borderColor ? {borderColor: this.props.borderColor} : {border: "none"}
         return (
             <div
-            className={`SpreadCircle`}
+            className={`SpreadCircle ${window.innerWidth < 500 && "mobile"}`}
             style={style}
             onMouseOver={this.putLightly}
             onMouseOut={this.putLightlyCancel}
@@ -58,11 +64,8 @@ export default class SpreadCircle extends React.Component{
             onTouchStart={this.putLightly}
             onTouchEnd={this.spread}
             onTouchCancel={this.spread}>
-                <div className={`putLightly ${this.state.putLightly && "on"}`}></div>
-                <div
-                className={`spread ${this.state.spread && "on"}`}
-                style={spreadOnStyle}
-                ></div>
+                <div className={`spread ${this.state.spread && "on"}`} style={spreadOnStyle}></div>
+                <div className={`putLightly ${this.state.putLightly && "on"}`} style={putLightlyStyle}></div>
             </div>
         )
     }
@@ -70,4 +73,5 @@ export default class SpreadCircle extends React.Component{
 SpreadCircle.defaultProps = {
     r: 8,
     color: "#333",
+    // borderColor: "#999",
 }
