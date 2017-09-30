@@ -1,7 +1,7 @@
 import React from "react"
 import SvgButton from "./SvgButton"
-const Footer = () => (
-    <footer className="footer">
+const Footer = props => (
+    <footer className="footer" {...props}>
         <SvgButton shapeColorHover="#eee">Contact</SvgButton>
         <SvgButton shapeColorHover="#eee">Terms of use</SvgButton>
         <SvgButton shapeColorHover="#eee">Pravacy policy</SvgButton>

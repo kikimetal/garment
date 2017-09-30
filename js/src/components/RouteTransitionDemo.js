@@ -1,8 +1,10 @@
 import React from 'react';
 import { TransitionMotion, spring } from 'react-motion';
 
+const springOption = {stiffness: 50, damping: 20, precision: 0.5}
+
 const willLeave = () => ({
-    // opacity: spring(0, {stiffness: 2, damping: 5, precision: 0.1}),
+    // opacity: spring(0, springOption),
     // scale: spring(1.3)
     // blur: spring(20, {stiffness: 7, damping: 5, precision: 0.05}),
     // translate: spring(-30),
@@ -10,17 +12,16 @@ const willLeave = () => ({
 });
 
 const willEnter = () => ({
-    opacity: 0,
+    // opacity: 0,
     // scale: 0.7
     blur: 10,
     // translate: 30,
     // scale: 1.1,
 });
 
-const springOption = {stiffness: 56, damping: 20, precision: 0.5}
-
 const getStyles = () => ({
-    opacity: spring(1, springOption),
+    // opacity: 1,
+    // opacity: spring(1, springOption),
     // scale: spring(1)
     blur: spring(0, springOption),
     // translate: spring(0, springOption),
@@ -34,7 +35,9 @@ const RouteTransition = ({ children: child, pathname, className}) => (
             style: getStyles(),
             data: { child }
         }] }
+
         willEnter={ willEnter }
+
         >
         { (interpolated) =>
             <div>
@@ -43,7 +46,7 @@ const RouteTransition = ({ children: child, pathname, className}) => (
                         className={`RouteTransitionContainer ${className}`}
                         key={ `${key}-transition` }
                         style={{
-                            opacity: style.opacity,
+                            // opacity: style.opacity,
                             filter: `blur(${style.blur}px)`,
                         }}
                     >

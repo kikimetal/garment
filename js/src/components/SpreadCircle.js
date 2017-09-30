@@ -7,10 +7,14 @@ export default class SpreadCircle extends React.Component{
             disable: false,
             putLightly: false,
             spread: false,
+            setTimeoutId: null,
         }
         this.putLightly = this.putLightly.bind(this)
         this.putLightlyCancel = this.putLightlyCancel.bind(this)
         this.spread = this.spread.bind(this)
+    }
+    componentWillUnmount(){
+        clearTimeout(this.state.setTimeoutId)
     }
     putLightlyCancel(){
         this.setState({
@@ -18,30 +22,32 @@ export default class SpreadCircle extends React.Component{
         })
     }
     putLightly(e){
-        e.preventDefault()
+        // e.preventDefault()
         this.setState({
             putLightly: true,
         })
     }
     spread(e){
-        e.preventDefault()
+        // e.preventDefault()
         if (this.state.disable) {
             return this.setState({
                 putLightly: false,
                 disable: false,
             })
         }
-        this.setState({
-            putLightly: false,
-            spread: true,
-            disable: true,
-        })
-        setTimeout(()=>{
+        clearTimeout(this.state.setTimeoutId)
+        const setTimeoutId = setTimeout(()=>{
             this.setState({
                 disable: false,
                 spread: false,
             })
         }, 700)
+        this.setState({
+            putLightly: false,
+            spread: true,
+            disable: true,
+            setTimeoutId: setTimeoutId,
+        })
     }
     render(){
         const r2 = this.props.r * 2
@@ -54,6 +60,7 @@ export default class SpreadCircle extends React.Component{
         const vmax = window.innerHeight > window.innerWidth ? window.innerHeight : window.innerWidth
         const spreadOnStyle = this.state.spread ? {transform: `scale(${vmax / r2})`} : {}
         const putLightlyStyle = this.props.borderColor ? {borderColor: this.props.borderColor} : {border: "none"}
+
         return (
             <div
             className={`SpreadCircle ${window.innerWidth < 500 && "mobile"}`}

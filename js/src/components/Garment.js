@@ -1,3 +1,4 @@
+import {colors} from "../define"
 import React from "react"
 import {BrowserRouter, Route, Switch, NavLink} from "react-router-dom"
 import DocumentTitle from "react-document-title"
@@ -16,6 +17,7 @@ import Footer from "./Footer"
 import GarmentNav from "./GarmentNav"
 import * as Pages from "./Pages"
 import RouteTransition from "./RouteTransitionDemo"
+import SpreadCircle from "./SpreadCircle"
 
 export default class Garment extends React.Component{
     constructor(props){
@@ -46,7 +48,7 @@ export default class Garment extends React.Component{
             this.setState({
                 isShowNav: false,
             })
-        }, 300)
+        }, 400)
     }
     render(){
         const path = this.props.match.path // App.jsより引き継ぎ
@@ -59,23 +61,30 @@ export default class Garment extends React.Component{
                 </div>
                 <GarmentNav path={path} show={this.state.isShowNav} onClickHideNav={this.hideNav} onClickHideNavDelay={this.hideNavDelay} />
 
-                <RouteTransition pathname={ location.pathname } className={`blur-container ${this.state.isShowNav && "on"}`}>
-                    <ScrollToTopOnMount />
-
+                {/*}<RouteTransition pathname={ location.pathname } className={`blur-container ${this.state.isShowNav && "on"}`}>*/}
+                <div className={`blur-container ${this.state.isShowNav && "on"}`}>
                     <EdgeLine/>
+                    <Route component={ScrollToTopOnMount}/>
                     <Switch>
                         <Route exact path={path} component={Pages.Home} />
                         <Route exact path={`${path}/home`} component={Pages.Home} />
-                        <Route exact path={`${path}/product`} component={Pages.Product} />
+                        <Route path={`${path}/product`} component={Pages.Product} />
                         <Route exact path={`${path}/story`} component={Pages.Story} />
                         <Route component={NotFound} />
                     </Switch>
-
-                    <Footer/>
-                </RouteTransition>
+                </div>
+                {/*</RouteTransition>*/}
 
             </div>
         )
     }
 }
+
+
+
+
+// <Route exact path={`${path}/product/cyan`} component={Pages.Fragrance.Base.Cyan} />
+// <Route exact path={`${path}/product/magenta`} component={Pages.Fragrance.Base.Magenta} />
+// <Route exact path={`${path}/product/yellow`} component={Pages.Fragrance.Base.Cyan} />
+
 // <Route exact path={`${path}/transition`} component={TransitionMotionDemo} />
