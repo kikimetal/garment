@@ -24,6 +24,7 @@ export default class Garment extends React.Component{
         super(props)
         this.state = {
             isShowNav: false,
+            isBlur: true,
         }
         this.showNav = this.showNav.bind(this)
         this.hideNav = this.hideNav.bind(this)
@@ -31,6 +32,11 @@ export default class Garment extends React.Component{
     }
     componentWillMount(){
         document.body.style.background = "#fafafa"
+    }
+    componentDidMount(){
+        setTimeout(()=>{
+            this.setState({isBlur: false})
+        }, 100)
     }
     showNav(e){
         e.preventDefault()
@@ -55,6 +61,7 @@ export default class Garment extends React.Component{
         // console.log(path)
         return (
             <div className="Garment">
+                <ScrollToTopOnMount />
 
                 <div className={`nav-btn ${this.state.isShowNav && "hide"}`} onClick={this.showNav}>
                     <Apps />
@@ -62,9 +69,8 @@ export default class Garment extends React.Component{
                 <GarmentNav path={path} show={this.state.isShowNav} onClickHideNav={this.hideNav} onClickHideNavDelay={this.hideNavDelay} />
 
                 {/*}<RouteTransition pathname={ location.pathname } className={`blur-container ${this.state.isShowNav && "on"}`}>*/}
-                <div className={`blur-container ${this.state.isShowNav && "on"}`}>
+                <div className={`blur-container ${this.state.isBlur && "on"} ${this.state.isShowNav && "on"}`}>
                     <EdgeLine/>
-                    <Route component={ScrollToTopOnMount}/>
                     <Switch>
                         <Route exact path={path} component={Pages.Home} />
                         <Route exact path={`${path}/home`} component={Pages.Home} />

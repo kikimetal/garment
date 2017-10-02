@@ -5,11 +5,11 @@ export default class DelayLink extends React.Component{
         super(props)
     }
     render(){
-        const href = this.props.href
+        const to = this.props.to
         const delayJump = (e) => {
             e.preventDefault()
             setTimeout(()=>{
-                location.href = href
+                location.href = to
             }, 260)
         }
         return (
@@ -20,5 +20,5 @@ export default class DelayLink extends React.Component{
     }
 }
 DelayLink.defaultProps = {
-    href: "/",
+    to: "/",
 }

@@ -29,7 +29,7 @@ export default class Entrance extends React.Component{
                     <svg className="dash-bottom">
                         <line stroke="dimgrey" strokeWidth={1} x1={0} y1={4} x2={window.innerWidth} y2={4} />
                     </svg>
-                    <DelayLink href="/garment-dev">
+                    <DelayLink to="/garment-dev">
                         <div className="logo"></div>
                         <SvgButton className="enter">Enter</SvgButton>
                     </DelayLink>

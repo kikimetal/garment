@@ -13,6 +13,7 @@ import RouteTransition from "./RouteTransitionDemo"
 
 export const Home = props => (
     <div className="Home">
+        {/*<ScrollToTopOnMount />*/}
         <DocumentTitle title="GARMENT" />
         <div style={{margin: "100px auto 0", width: "80%", height: "260px", backgroundImage: "url('/image/logo.png')", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center"}}></div>
         <div style={{textAlign: "center", height: "200px", padding: "0", display: "flex", flexFlow: "column", justifyContent: "center", alignItems: "center"}}>
@@ -27,6 +28,7 @@ export const Home = props => (
 
 export const Story = props => (
     <div className="Story">
+        {/*<ScrollToTopOnMount />*/}
         <DocumentTitle title="GARMENT::Story" />
         <h1 className="page-title">Story</h1>
         <div style={{textAlign: "center", padding: "8em 0", fontSize: "30px", background: "#eee"}}>
@@ -61,6 +63,7 @@ export class Product extends React.Component{
         }
         return (
             <div className="Product">
+                {/*<ScrollToTopOnMount />*/}
                 <DocumentTitle title="GARMENT::Product" />
 
                 <div onTouchStart={navOn}>
@@ -78,12 +81,12 @@ export class Product extends React.Component{
                 </div>
 
                 <nav className={`product-nav ${this.state.isShowNav || "hide"}`}>
-                    <h3>Base Fragrance</h3>
+                    <h2 className="product-nav-title">Base Fragrance</h2>
                     <ul>
-                        <li><NavLink to={`${path}/cyan`}><SpreadCircle r={17} color={colors.cyan} /></NavLink></li>
-                        <li><NavLink to={`${path}/magenta`}><SpreadCircle r={17} color={colors.magenta} /></NavLink></li>
-                        <li><NavLink to={`${path}/yellow`}><SpreadCircle r={17} color={colors.yellow} /></NavLink></li>
-                        <li><NavLink to={`${path}/white`}><SpreadCircle r={17} color="white" /></NavLink></li>
+                        <li><NavLink to={`${path}/cyan`}><SpreadCircle r={13} color={colors.cyan} /></NavLink></li>
+                        <li><NavLink to={`${path}/magenta`}><SpreadCircle r={13} color={colors.magenta} /></NavLink></li>
+                        <li><NavLink to={`${path}/yellow`}><SpreadCircle r={13} color={colors.yellow} /></NavLink></li>
+                        <li><NavLink to={`${path}/white`}><SpreadCircle r={13} color="white" /></NavLink></li>
                     </ul>
                 </nav>
 
@@ -97,6 +100,7 @@ const Fragrance = {
     Base: {
         Cyan: props => (
             <div className="Cyan base-fragrance">
+                <ScrollToTopOnMount/>
                 <img src="/image/bottle_photo/cyan.jpg" alt="ガーメントシアンの画像" />
                 <div className="text">
                     <h2><strong>ガーメント<br/>ベースフレグランス<br/>シアン</strong></h2>
@@ -111,6 +115,7 @@ const Fragrance = {
         ),
         Magenta: props => (
             <div className="Magenta base-fragrance">
+                <ScrollToTopOnMount/>
                 <img src="/image/bottle_photo/magenta.jpg" alt="ガーメントシアンの画像" />
                 <div className="text">
                     <h2><strong>ガーメント<br/>ベースフレグランス<br/>マゼンタ</strong></h2>
@@ -125,6 +130,7 @@ const Fragrance = {
         ),
         Yellow: props => (
             <div className="Yellow base-fragrance">
+                <ScrollToTopOnMount/>
                 <img src="/image/bottle_photo/yellow.jpg" alt="ガーメントシアンの画像" />
                 <div className="text">
                     <h2><strong>ガーメント<br/>ベースフレグランス<br/>イエロー</strong></h2>
@@ -139,6 +145,7 @@ const Fragrance = {
         ),
         White: props => (
             <div className="White base-fragrance">
+                <ScrollToTopOnMount/>
                 <img src="/image/bottle_photo/yellow.jpg" alt="ガーメントシアンの画像" />
                 <div className="text">
                     <h2><strong>ガーメント<br/>ベースフレグランス<br/>イエロー</strong></h2>
