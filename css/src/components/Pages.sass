@@ -6,6 +6,9 @@
     display: block
     width: 100%
     overflow-x: hidden
+    --selected-item-bg-color: #f2f2f2
+    --nav-bg-color: #333
+    --nav-text-color: #bbb
 
     .product-nav
         position: fixed
@@ -18,29 +21,70 @@
         align-items: center
         width: 100%
         // height: 90px
-        padding: 0 0 32px
-        background: #333
-        color: #bbb
+        background: var(--nav-bg-color)
+        color: var(--nav-text-color)
         z-index: 10
-        transition: 0.3s ease
+        opacity: 0.9
+        transition: 0.5s ease
         .product-nav-title
+            display: flex
+            flex-flow: row wrap
+            // justify-content: center
+            width: 100%
             line-height: 2.8
             font-weight: bold
             font-size: 100%
+            cursor: pointer
+            > *
+                transition: 0.4s
+                box-sizing: border-box
+                width: 50%
+                text-align: center
+                &:not(.selected)
+                    background: var(--selected-item-bg-color)
+                    color: #999
+
         ul
-            // position: absolute
-            // position: relative
-            // left: 0
-            // right: 0
-            // bottom: calc(100px - 17px - 2px)
             display: flex
             flex-flow: row wrap
             justify-content: space-between
             width: 72%
-            // margin: 0 auto
+            padding: 20px 0 26px
+            &.base
+                animation: slide-in-left 0.4s ease-out
+                @keyframes slide-in-left
+                    from
+                        transform: translateX(30px)
+                        opacity: 0.4
+                    to
+                        transform: translateX(0px)
+                        opacity: 1
+            &.filter
+                animation: slide-in-right 0.4s ease-out
+                @keyframes slide-in-right
+                    from
+                        transform: translateX(-30px)
+                        opacity: 0.4
+                    to
+                        transform: translateX(0px)
+                        opacity: 1
+            li
+                position: relative
+                a
+                    display: flex
+                    flex-flow: column
+                    justify-content: center
+                    align-items: center
+                    width: 50px
+                    > .text
+                        padding: 3px 0 0 0
+                        font-size: 11px
+                        pointer-events: none
         &.hide
+            transform: translateY(20px)
             opacity: 0
             pointer-events: none
+
 
     .selected-item-container
         // position: absolute
@@ -53,24 +97,26 @@
         width: 100%
         // height: calc(100vh - 100px)
         // min-height: 100vh
-        background: #f2f2f2
+        background: var(--selected-item-bg-color)
         text-align: center
         // padding: 3em 0
         padding: 0 0 3em
 
-        .base-fragrance
+        // .base-fragrance, .filter-fragrance
+        .fragrance
             display: flex
             flex-flow: column wrap
             justify-content: center
             align-items: center
             line-height: 1.3
-            animation: fade-in 1.2s ease both
             filter: blur(20px)
             opacity: 0
-            @keyframes fade-in
-                to
-                    filter: blur(0px)
-                    opacity: 1
+            &.loaded
+                animation: fade-in 1.2s ease both
+                @keyframes fade-in
+                    to
+                        filter: blur(0px)
+                        opacity: 1
             img
                 max-width: 90%
                 padding: 20px

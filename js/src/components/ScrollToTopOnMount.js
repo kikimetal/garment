@@ -1,7 +1,9 @@
 import React from "react"
 export default class ScrollToTopOnMount extends React.Component{
     componentDidMount(){
-        window.scrollTo(0, 0)
+        setTimeout(()=>{
+            window.scrollTo(0, 0)
+        }, 100)
     }
     render(){
         return null

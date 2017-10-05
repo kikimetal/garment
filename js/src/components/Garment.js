@@ -70,7 +70,6 @@ export default class Garment extends React.Component{
 
                 {/*}<RouteTransition pathname={ location.pathname } className={`blur-container ${this.state.isShowNav && "on"}`}>*/}
                 <div className={`blur-container ${this.state.isBlur && "on"} ${this.state.isShowNav && "on"}`}>
-                    <EdgeLine/>
                     <Switch>
                         <Route exact path={path} component={Pages.Home} />
                         <Route exact path={`${path}/home`} component={Pages.Home} />
