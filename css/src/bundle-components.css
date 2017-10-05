@@ -646,8 +646,11 @@
 }
 
 .Garment .page-title {
-  padding: 1.45em;
-  font-size: 28px;
+  padding: 1.73em 1.3em 1.5em;
+  font-size: 26px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .Garment .nav-btn {
@@ -657,19 +660,18 @@
   display: block;
   width: 1em;
   height: 1em;
-  padding: 1.4em;
-  border-radius: 0.2em;
+  padding: 1.3em 1.1em;
   text-align: center;
-  font-size: 28px;
+  font-size: 30px;
   cursor: pointer;
   z-index: 1000;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .Garment .nav-btn.hide {
-  -webkit-transform: translateY(-10px);
-  transform: translateY(-10px);
+  -webkit-transform: translateY(-16px);
+  transform: translateY(-16px);
   opacity: 0;
   pointer-events: none;
 }
@@ -691,8 +693,7 @@
   text-decoration: none;
   text-align: center;
   position: relative;
-  height: calc(400px - 10vw);
-  min-height: 500px;
+  padding: 60px 0 100px;
   -webkit-box-shadow: 1px 0 4px 0px #333 inset;
   box-shadow: 1px 0 4px 0px #333 inset;
 }
@@ -1055,6 +1056,7 @@
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
+  min-height: calc(100vh - 100px);
   background: var(--selected-item-bg-color);
   text-align: center;
   padding: 0 0 3em;

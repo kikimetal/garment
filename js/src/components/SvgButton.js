@@ -27,16 +27,6 @@ export default class SvgButton extends React.Component{
         const ww = this.state.ww
         let size = this.props.size
         let width = this.props.width
-        // size = ww > 640
-        //     ? size
-        //     : ww > 375
-        //         ? size * 0.76
-        //         : size * 0.65
-        // width = ww > 640
-        //     ? width
-        //     : ww > 375
-        //         ? width * 0.57
-        //         : width * 0.48
 
         const padding = ww > 640 ? size * 0.9 : size * 0.8
         // const padding = size

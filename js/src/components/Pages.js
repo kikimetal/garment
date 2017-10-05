@@ -10,13 +10,16 @@ import EdgeLine from "./EdgeLine"
 import Designer from "./Designer"
 import SpreadCircle from "./SpreadCircle"
 import Footer from "./Footer"
+import MobileFooterNav from "./MobileFooterNav"
 import RouteTransition from "./RouteTransitionDemo"
+
+
 
 export const Home = props => (
     <div className="Home">
-        {/*<ScrollToTopOnMount />*/}
-        <DocumentTitle title="GARMENT" />
         <EdgeLine/>
+        <ScrollToTopOnMount />
+        <DocumentTitle title="GARMENT" />
 
         <div style={{margin: "100px auto 0", width: "80%", height: "260px", backgroundImage: "url('/image/logo.png')", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center"}}></div>
         <div style={{textAlign: "center", height: "200px", padding: "0", display: "flex", flexFlow: "column", justifyContent: "center", alignItems: "center"}}>
@@ -29,10 +32,15 @@ export const Home = props => (
     </div>
 )
 
+
+
+
 export const Story = props => (
     <div className="Story">
-        {/*<ScrollToTopOnMount />*/}
+        <EdgeLine/>
+        <ScrollToTopOnMount />
         <DocumentTitle title="GARMENT::Story" />
+
         <h1 className="page-title">Story</h1>
         <div style={{textAlign: "center", padding: "8em 0", fontSize: "30px", background: "#eee"}}>
             <h1>Concept</h1>
@@ -41,6 +49,9 @@ export const Story = props => (
         <Footer/>
     </div>
 )
+
+
+
 
 export class Product extends React.Component{
     constructor(props){
@@ -66,24 +77,24 @@ export class Product extends React.Component{
         }
         return (
             <div className="Product">
+                <EdgeLine/>
                 <ScrollToTopOnMount />
                 <DocumentTitle title="GARMENT::Product" />
-                <EdgeLine/>
 
                 <div onTouchStart={navOn}>
                     <h1 className="page-title">Product</h1>
 
                     <div className="selected-item-container">
                         <Switch>
-                            <Route exact path={`${path}/`} component={Fragrance.Base.Cyan} />
-                            <Route exact path={`${path}/cyan`} component={Fragrance.Base.Cyan} />
-                            <Route exact path={`${path}/magenta`} component={Fragrance.Base.Magenta} />
-                            <Route exact path={`${path}/yellow`} component={Fragrance.Base.Yellow} />
-                            <Route exact path={`${path}/white`} component={Fragrance.Base.White} />
-                            <Route exact path={`${path}/fur`} component={Fragrance.Filter.Fur} />
-                            <Route exact path={`${path}/frill`} component={Fragrance.Filter.Frill} />
-                            <Route exact path={`${path}/linen`} component={Fragrance.Filter.Linen} />
-                            <Route exact path={`${path}/denim`} component={Fragrance.Filter.Denim} />
+                            <Route exact path={`${path}/`} component={Cyan} />
+                            <Route exact path={`${path}/cyan`} component={Cyan} />
+                            <Route exact path={`${path}/magenta`} component={Magenta} />
+                            <Route exact path={`${path}/yellow`} component={Yellow} />
+                            <Route exact path={`${path}/white`} component={White} />
+                            <Route exact path={`${path}/fur`} component={Fur} />
+                            <Route exact path={`${path}/frill`} component={Frill} />
+                            <Route exact path={`${path}/linen`} component={Linen} />
+                            <Route exact path={`${path}/denim`} component={Denim} />
                         </Switch>
                     </div>
                 </div>
@@ -128,10 +139,7 @@ const UlFilter = props => {
     )
 }
 
-
-
-
-class F extends React.Component{
+class Fragrance extends React.Component{
     constructor(props){
         super(props)
         this.state = {
@@ -149,178 +157,115 @@ class F extends React.Component{
 }
 
 
-const Fragrance = {
-    Base: {
-        // Cyan: class Cyan extends React.Component{
-        //     constructor(props){
-        //         super(props)
-        //         this.state = {
-        //             loaded: false,
-        //         }
-        //     }
-        //     render(){
-        //         return (
-        //             <div className={`Cyan base-fragrance ${this.state.loaded}`}>
-        //                 <ScrollToThisOnMount/>
-        //                 <img onLoad={()=>this.setState({loaded: "loaded"})} src="/image/bottle_photo/cyan.jpg" alt="ガーメントシアンの画像" />
-        //                 <div className="text">
-        //                     <h2><strong>ガーメント<br/>ベースフレグランス<br/>シアン</strong></h2>
-        //                     <br/>
-        //                     <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
-        //                     <br/>
-        //                     <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
-        //                     <br/>
-        //                     <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
-        //                 </div>
-        //             </div>
-        //         )
-        //     }
-        // },
-        Cyan: () => (
-            <F>
-                <img src="/image/bottle_photo/cyan.jpg" alt="ガーメントシアンの画像" />
-                <div className="text">
-                    <h2><strong>ガーメント<br/>ベースフレグランス<br/>シアン</strong></h2>
-                    <br/>
-                    <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
-                    <br/>
-                    <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
-                    <br/>
-                    <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
-                </div>
-            </F>
-        ),
-        Magenta: class Magenta extends React.Component{
-            constructor(props){
-                super(props)
-                this.state = {
-                    loaded: false,
-                }
-            }
-            render(){
-                return (
-                    <div className={`Magenta base-fragrance ${this.state.loaded}`}>
-                        <ScrollToThisOnMount/>
-                        <img onLoad={()=>this.setState({loaded: "loaded"})} src="/image/bottle_photo/magenta.jpg" alt="ガーメントシアンの画像" />
-                        <div className="text">
-                            <h2><strong>ガーメント<br/>ベースフレグランス<br/>マゼンタ</strong></h2>
-                            <br/>
-                            <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
-                            <br/>
-                            <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
-                            <br/>
-                            <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
-                        </div>
-                    </div>
-                )
-            }
-        },
-        // Magenta: props => (
-        //     <div className="Magenta base-fragrance">
-        //         <ScrollToThisOnMount/>
-        //         <img src="/image/bottle_photo/magenta.jpg" alt="ガーメントシアンの画像" />
-        //         <div className="text">
-        //             <h2><strong>ガーメント<br/>ベースフレグランス<br/>マゼンタ</strong></h2>
-        //             <br/>
-        //             <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
-        //             <br/>
-        //             <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
-        //             <br/>
-        //             <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
-        //         </div>
-        //     </div>
-        // ),
-        Yellow: props => (
-            <div className="Yellow base-fragrance">
-                <ScrollToThisOnMount/>
-                <img src="/image/bottle_photo/yellow.jpg" alt="ガーメントシアンの画像" />
-                <div className="text">
-                    <h2><strong>ガーメント<br/>ベースフレグランス<br/>イエロー</strong></h2>
-                    <br/>
-                    <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
-                    <br/>
-                    <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
-                    <br/>
-                    <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
-                </div>
-            </div>
-        ),
-        White: props => (
-            <div className="White base-fragrance">
-                <ScrollToThisOnMount/>
-                <img src="/image/bottle_photo/yellow.jpg" alt="ガーメントシアンの画像" />
-                <div className="text">
-                    <h2><strong>ガーメント<br/>ベースフレグランス<br/>イエロー</strong></h2>
-                    <br/>
-                    <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
-                    <br/>
-                    <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
-                    <br/>
-                    <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
-                </div>
-            </div>
-        ),
-    },
-    Filter: {
-        Fur: props => (
-            <div className="Cyan filter-fragrance">
-                <ScrollToThisOnMount/>
-                <img src="/image/bottle_photo/fur.jpg" alt="ガーメントシアンの画像" />
-                <div className="text">
-                    <h2><strong>ガーメント<br/>ベースフレグランス<br/>シアン</strong></h2>
-                    <br/>
-                    <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
-                    <br/>
-                    <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
-                    <br/>
-                    <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
-                </div>
-            </div>
-        ),
-        Frill: props => (
-            <div className="Magenta filter-fragrance">
-                <ScrollToThisOnMount/>
-                <img src="/image/bottle_photo/frill.jpg" alt="ガーメントシアンの画像" />
-                <div className="text">
-                    <h2><strong>ガーメント<br/>ベースフレグランス<br/>マゼンタ</strong></h2>
-                    <br/>
-                    <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
-                    <br/>
-                    <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
-                    <br/>
-                    <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
-                </div>
-            </div>
-        ),
-        Linen: props => (
-            <div className="Yellow filter-fragrance">
-                <ScrollToThisOnMount/>
-                <img src="/image/bottle_photo/linen.jpg" alt="ガーメントシアンの画像" />
-                <div className="text">
-                    <h2><strong>ガーメント<br/>ベースフレグランス<br/>イエロー</strong></h2>
-                    <br/>
-                    <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
-                    <br/>
-                    <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
-                    <br/>
-                    <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
-                </div>
-            </div>
-        ),
-        Denim: props => (
-            <div className="White filter-fragrance">
-                <ScrollToThisOnMount/>
-                <img src="/image/bottle_photo/linen.jpg" alt="ガーメントシアンの画像" />
-                <div className="text">
-                    <h2><strong>ガーメント<br/>ベースフレグランス<br/>イエロー</strong></h2>
-                    <br/>
-                    <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
-                    <br/>
-                    <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
-                    <br/>
-                    <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
-                </div>
-            </div>
-        ),
-    },
-}
+const Cyan = () => (
+    <Fragrance>
+        <img src="/image/bottle_photo/cyan.jpg" alt="ガーメントシアンの画像" />
+        <div className="text">
+            <h2><strong>ガーメント<br/>ベースフレグランス<br/>シアン</strong></h2>
+            <br/>
+            <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
+            <br/>
+            <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
+            <br/>
+            <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
+        </div>
+    </Fragrance>
+)
+const Magenta = () => (
+    <Fragrance>
+        <img src="/image/bottle_photo/magenta.jpg" alt="ガーメントシアンの画像" />
+        <div className="text">
+            <h2><strong>ガーメント<br/>ベースフレグランス<br/>マゼンタ</strong></h2>
+            <br/>
+            <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
+            <br/>
+            <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
+            <br/>
+            <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
+        </div>
+    </Fragrance>
+)
+const Yellow = () => (
+    <Fragrance>
+        <img src="/image/bottle_photo/yellow.jpg" alt="ガーメントシアンの画像" />
+        <div className="text">
+            <h2><strong>ガーメント<br/>ベースフレグランス<br/>イエロー</strong></h2>
+            <br/>
+            <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
+            <br/>
+            <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
+            <br/>
+            <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
+        </div>
+    </Fragrance>
+)
+const White = () => (
+    <Fragrance>
+        <img src="/image/bottle_photo/yellow.jpg" alt="ガーメントシアンの画像" />
+        <div className="text">
+            <h2><strong>ガーメント<br/>ベースフレグランス<br/>イエロー</strong></h2>
+            <br/>
+            <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
+            <br/>
+            <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
+            <br/>
+            <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
+        </div>
+    </Fragrance>
+)
+const Fur = () => (
+    <Fragrance>
+        <img src="/image/bottle_photo/fur.jpg" alt="ガーメントシアンの画像" />
+        <div className="text">
+            <h2><strong>ガーメント<br/>ベースフレグランス<br/>ファー</strong></h2>
+            <br/>
+            <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
+            <br/>
+            <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
+            <br/>
+            <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
+        </div>
+    </Fragrance>
+)
+const Frill = () => (
+    <Fragrance>
+        <img src="/image/bottle_photo/frill.jpg" alt="ガーメントシアンの画像" />
+        <div className="text">
+            <h2><strong>ガーメント<br/>ベースフレグランス<br/>フリル</strong></h2>
+            <br/>
+            <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
+            <br/>
+            <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
+            <br/>
+            <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
+        </div>
+    </Fragrance>
+)
+const Linen = () => (
+    <Fragrance>
+        <img src="/image/bottle_photo/linen.jpg" alt="ガーメントシアンの画像" />
+        <div className="text">
+            <h2><strong>ガーメント<br/>ベースフレグランス<br/>リネン</strong></h2>
+            <br/>
+            <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
+            <br/>
+            <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
+            <br/>
+            <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
+        </div>
+    </Fragrance>
+)
+const Denim = () => (
+    <Fragrance>
+        <img src="/image/bottle_photo/linen.jpg" alt="ガーメントシアンの画像" />
+        <div className="text">
+            <h2><strong>ガーメント<br/>ベースフレグランス<br/>デニム</strong></h2>
+            <br/>
+            <p><strong>個性にエッジをきかせてドラマチックに</strong></p>
+            <br/>
+            <p>タバックレザーを基調にセンシュアルな甘い香りが、<br/>男性をよりダンディに、<br/>女性をクールでスタイリッシュに引き立たせます。</p>
+            <br/>
+            <p>オードトワレ／ユニセックス<br/>50mL 12,800円</p>
+        </div>
+    </Fragrance>
+)

@@ -3,7 +3,8 @@ import React from "react"
 import {BrowserRouter, Route, Switch, NavLink} from "react-router-dom"
 import DocumentTitle from "react-document-title"
 import PropTypes from "prop-types"
-import Apps from 'react-icons/lib/md/apps'
+// import MdApps from 'react-icons/lib/md/apps'
+import MdLineWeight from "react-icons/lib/md/line-weight"
 
 import EdgeLine from "./EdgeLine"
 import Button from "./Button"
@@ -64,7 +65,7 @@ export default class Garment extends React.Component{
                 <ScrollToTopOnMount />
 
                 <div className={`nav-btn ${this.state.isShowNav && "hide"}`} onClick={this.showNav}>
-                    <Apps />
+                    <MdLineWeight />
                 </div>
                 <GarmentNav path={path} show={this.state.isShowNav} onClickHideNav={this.hideNav} onClickHideNavDelay={this.hideNavDelay} />
 
