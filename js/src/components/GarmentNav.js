@@ -13,15 +13,33 @@ export default class GarmentNav extends React.Component{
         this.state = {
             bgTranslate: null,
         }
+        this.handleDeviceOrientation = this.handleDeviceOrientation.bind(this)
     }
     componentDidMount(){
-        window.addEventListener("deviceorientation", (e)=>{
-            let x = e.beta / 2
-            let y = e.gamma / 2
-            const n = 1
-            x = x > 50 ? 50 : x < -50 ? -50 : Math.floor( x * Math.pow( 10, n ) ) / Math.pow( 10, n )
-            y = y > 50 ? 50 : y < -50 ? -50 : Math.floor( y * Math.pow( 10, n ) ) / Math.pow( 10, n )
-            this.setState({bgTranslate: `translate(${y}px, ${x}px)`})
+        // if(!this.props.show) return
+        window.addEventListener("deviceorientation", this.handleDeviceOrientation)
+    }
+    componentWillUnmount(){
+        window.removeEventListener("deviceorientation", this.handleDeviceOrientation)
+    }
+    // componentWillReceiveProps(nextProps){
+    //     if(nextProps.show){
+    //         window.addEventListener("deviceorientation", this.handleDeviceOrientation)
+    //     }else{
+    //         window.removeEventListener("deviceorientation", this.handleDeviceOrientation)
+    //     }
+    // }
+    handleDeviceOrientation(e){
+        if(!this.props.show) return
+
+        let x = e.beta / 1.6
+        let y = e.gamma / 1.3
+        const n = 1
+        const maxPx = 40
+        x = x > maxPx ? maxPx : x < -maxPx ? -maxPx : Math.floor( x * Math.pow( 10, n ) ) / Math.pow( 10, n )
+        y = y > maxPx ? maxPx : y < -maxPx ? -maxPx : Math.floor( y * Math.pow( 10, n ) ) / Math.pow( 10, n )
+        this.setState({
+            bgTranslate: `translate(${y}px, ${x}px)`
         })
     }
     render(){
