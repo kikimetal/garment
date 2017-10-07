@@ -118,9 +118,8 @@ export class Product extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            isShowNav: true,
+            isShowNav: false,
             productNavType: "base",
-            isOverProduct: false,
         }
         this.navOn = this.navOn.bind(this)
         this.navOff = this.navOff.bind(this)
@@ -156,7 +155,7 @@ export class Product extends React.Component{
                 <div onTouchMove={this.navOn} onClick={this.navToggle}>
                     <h1 className="page-title">Product</h1>
 
-                    <div className="selected-item-container">
+                    <div className="selected-item-container" onLoad={this.navOff}>
                         <Switch>
                             <Route exact path={`${path}/`} component={Cyan} />
                             <Route exact path={`${path}/cyan`} component={Cyan} />

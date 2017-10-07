@@ -1052,15 +1052,6 @@
   --nav-text-color: #bbb;
 }
 
-.Product img.distribution-map {
-  display: block;
-  width: 90%;
-  margin: 0 auto;
-  padding: 2em 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 .Product .product-nav {
   position: fixed;
   left: 0;
@@ -1266,6 +1257,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -1273,10 +1268,10 @@
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  min-height: calc(100vh - 240px);
-  background: var(--selected-item-bg-color);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(var(--selected-item-bg-color)));
+  background: linear-gradient(180deg, #fff, var(--selected-item-bg-color));
   text-align: center;
-  padding: 0 1em 3em;
+  padding: 3rem 0 3rem;
 }
 
 .Product .selected-item-container .fragrance {
@@ -1315,7 +1310,6 @@
 
 .Product .selected-item-container .fragrance img {
   max-width: 90%;
-  padding: 20px;
 }
 
 .Product .selected-item-container .fragrance .text {
@@ -1323,7 +1317,7 @@
 }
 
 .Product .selected-item-container .fragrance .text.description {
-  padding: 2em 0 1.2em;
+  padding: 2.7rem 0 1.3rem;
 }
 
 .Product .selected-item-container .fragrance .text.description strong {
