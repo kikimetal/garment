@@ -120,28 +120,40 @@ export class Product extends React.Component{
         this.state = {
             isShowNav: true,
             productNavType: "base",
+            isOverProduct: false,
         }
+        this.navOn = this.navOn.bind(this)
+        this.navOff = this.navOff.bind(this)
+        this.navToggle = this.navToggle.bind(this)
+    }
+    componentDidMount(){
+        document.querySelector(".FooterNav").addEventListener("touchstart", this.navOff)
+        document.querySelector(".Footer").addEventListener("touchstart", this.navOff)
+    }
+    componentWillUnmount(){
+        document.querySelector(".FooterNav").removeEventListener("touchstart", this.navOff)
+        document.querySelector(".Footer").removeEventListener("touchstart", this.navOff)
+    }
+    navOn(){
+        if (this.state.isShowNav) return
+        this.setState({ isShowNav: true })
+    }
+    navOff(){
+        if (!this.state.isShowNav) return
+        this.setState({ isShowNav: false })
+    }
+    navToggle(){
+        this.setState({ isShowNav: !this.state.isShowNav })
     }
     render(){
         const path = this.props.match.path
-        const navOn = () => {
-            if (this.state.isShowNav) return
-            this.setState({ isShowNav: true })
-        }
-        const navOff = () => {
-            if (!this.state.isShowNav) return
-            this.setState({ isShowNav: false })
-        }
-        const navToggle = () => {
-            this.setState({ isShowNav: !this.state.isShowNav })
-        }
         return (
             <div className="Product">
                 <EdgeLine/>
                 <ScrollToTopOnMount />
                 <DocumentTitle title="GARMENT::Product" />
 
-                <div onTouchMove={navOn} onClick={navToggle}>
+                <div onTouchMove={this.navOn} onClick={this.navToggle}>
                     <h1 className="page-title">Product</h1>
 
                     <div className="selected-item-container">
@@ -168,7 +180,7 @@ export class Product extends React.Component{
                     <UlFilter path={path} isShow={this.state.productNavType === "filter"} />
                 </nav>
 
-                <img onTouchStart={navOff} className="distribution-map reposition-center" src="/image/distribution.png" />
+                {/*}<img onTouchStart={navOff} className="distribution-map reposition-center" src="/image/distribution.png" />*/}
             </div>
         )
     }
