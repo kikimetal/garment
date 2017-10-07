@@ -84,6 +84,26 @@ br.mobile {
   }
 }
 
+img.reposition-center {
+  position: relative;
+  top: 0;
+  left: 7px;
+}
+
+.common-title {
+  font-size: 130%;
+  font-weight: bold;
+  padding: 2.2em 0;
+  margin: 0 5px;
+  background: #f2f2f2;
+  color: #222;
+  -webkit-box-shadow: 0 0 0 5px #f2f2f2;
+  box-shadow: 0 0 0 5px #f2f2f2;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px dashed #ccc;
+}
+
 /* animation */
 @-webkit-keyframes spin {
   from {

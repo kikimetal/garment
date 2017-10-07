@@ -9,9 +9,12 @@ import ScrollToThisOnMount from "./ScrollToThisOnMount"
 import EdgeLine from "./EdgeLine"
 import Designer from "./Designer"
 import SpreadCircle from "./SpreadCircle"
+import RouteTransition from "./RouteTransitionDemo"
 import Footer from "./Footer"
 import MobileFooterNav from "./MobileFooterNav"
-import RouteTransition from "./RouteTransitionDemo"
+import News from "./News"
+import FooterNav from "./FooterNav"
+
 
 
 
@@ -22,7 +25,7 @@ export const Home = props => (
         <DocumentTitle title="GARMENT" />
 
         <div className="article">
-            <img className="logo" src="/image/logo.png" />
+            <img className="logo reposition-center" src="/image/tag-logo.png" />
             <div className="text">
                 <p><b>ファッションのように、<br className="mobile"/>香りで自由に個性を表現したい。</b></p>
                 <p>
@@ -32,7 +35,8 @@ export const Home = props => (
             </div>
         </div>
 
-        <Footer/>
+        <News/>
+
     </div>
 )
 
@@ -48,22 +52,22 @@ export const Story = props => (
         <h1 className="page-title">STORY</h1>
         <div className="article">
 
-            <h1>BASE FRAGRANCE</h1>
+            <h1 className="common-title">BASE FRAGRANCE</h1>
             <div className="text">
                 <p>ベースフレグランスは、色から感じるイメージを香りで表現した香水です。</p>
                 <p>「今日は何色の服を着よう？」</p>
                 <p>そんな感覚で香りをまとって、お気に入りの香りをお楽しみください。</p>
             </div>
 
-            <h1>FRAGRANCE FILTER</h1>
+            <h1 className="common-title">FRAGRANCE FILTER</h1>
             <div className="text">
                 <p>フレグランスフィルターは、洋服の特徴や生地の質感を表現した香水です。</p>
                 <p>「エレガントに仕上げたい」「今日は“かわいい”をプラスして」「さらっとカジュアルなスタイルに」</p>
                 <p>加えたいテイストのフィルターをベースと組み合わせて、自分らしいスタイリングをお楽しみください。</p>
             </div>
 
-            <h1>FRAGRANCE FILTERING</h1>
-            <img src="/image/ff01.jpg"/>
+            <h1 className="common-title">FRAGRANCE FILTERING</h1>
+            <img className="ff01" src="/image/ff01.jpg"/>
             <div className="text">
                 <p>
                     写真の色彩を操るレンズフィルターから<br className="mobile"/>インスピレーションを受けた<br/>
@@ -79,7 +83,7 @@ export const Story = props => (
                     ベースフレグランスに吹き重ねてお使いください。
                 </p>
             </div>
-            <img src="/image/ff02.jpg"/>
+            <img className="ff02" src="/image/ff02.jpg"/>
             <div className="text">
                 <p>
                     ベースフレグランスの個性あふれる香りは<br className="mobile"/>単独でもお使いいただけますが、<br/>
@@ -103,9 +107,10 @@ export const Story = props => (
 
         <Designer/>
 
-        <Footer/>
     </div>
 )
+
+
 
 
 
@@ -163,7 +168,7 @@ export class Product extends React.Component{
                     <UlFilter path={path} isShow={this.state.productNavType === "filter"} />
                 </nav>
 
-                <Footer onTouchStart={navOff}/>
+                <img onTouchStart={navOff} className="distribution-map reposition-center" src="/image/distribution.png" />
             </div>
         )
     }

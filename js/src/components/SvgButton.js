@@ -34,7 +34,7 @@ export default class SvgButton extends React.Component{
         const innerText = this.props.children || "Hover"
 
         const strokeWidthMin = 1
-        const strokeWidthMax = size * 1.4
+        const strokeWidthMax = ww > 770 ? size * 1.2 : size * 0.7
 
         const underlineScale = ww > 640 ? 0.9 : 0.5
         const strokeDashoffset = this.state.hover ? 0 : -1 * (width + height + (width*(1 - underlineScale))/2)
@@ -89,8 +89,8 @@ export default class SvgButton extends React.Component{
 }
 SvgButton.defaultProps = {
     // size: 18,
-    size: 22,
-    width: 250,
+    size: 21,
+    width: 200,
     color: null, // 強制力大
     colorHover: null, // 強制力大
     shapeColor: "#888",

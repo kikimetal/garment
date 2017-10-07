@@ -16,6 +16,7 @@ import TransitionMotionDemo from "./TransitionMotionDemo"
 import ParallaxDemo from "./ParallaxDemo"
 import Designer from "./Designer"
 import Footer from "./Footer"
+import FooterNav from "./FooterNav"
 import GarmentNav from "./GarmentNav"
 import * as Pages from "./Pages"
 import RouteTransition from "./RouteTransitionDemo"
@@ -81,6 +82,9 @@ export default class Garment extends React.Component{
                     </Switch>
                 </div>
                 {/*</RouteTransition>*/}
+
+                <FooterNav onClick={this.showNav} />
+                <Footer />
 
             </div>
         )
