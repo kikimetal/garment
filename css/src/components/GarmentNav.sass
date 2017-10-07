@@ -1,4 +1,21 @@
 .GarmentNav
+    color: #444
+    .bg
+        position: fixed
+        top: -50px
+        left: -50px
+        right: -50px
+        bottom: -50px
+        background-image: linear-gradient(180deg, #bbb, #999), url("/image/street.png")
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        background-blend-mode: screen
+        z-index: 1
+        pointer-events: none
+        transition: opacity 0.3s ease
+        // transform: translate(100px, 100px)
+        transform-origin: center
     ul
         display: flex
         flex-flow: column wrap
@@ -9,11 +26,10 @@
         left: 0
         width: 100%
         height: 100vh
-        background: rgba(240, 240, 240, 0.78)
-        // opacity: 1
+        // background: rgba(240, 240, 240, 0.78)
         z-index: 999
         pointer-events: none
-        transition: 0.3s
+        transition: all 0.3s ease
         li
             pointer-events: auto
             flex: 0 1 auto
@@ -25,9 +41,15 @@
             flex: 1 1 auto
         li.margin:last-child
             flex: 1 0 16vh
+            box-sizing: border-box
+            padding-top: 60px
+            text-align: center
+            font-size: 28px
     &.hide
+        .bg
+            opacity: 0
         ul
-            background: rgba(240, 240, 240, 0)
+            opacity: 0
             li
                 transform: scale(0)
                 pointer-events: none

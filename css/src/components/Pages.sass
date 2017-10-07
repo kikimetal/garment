@@ -1,7 +1,47 @@
 .Home
+    background: var(--garment-bg-color)
+    .article
+        padding: 100px 0
+    img.street-image
+        width: 100%
+    img.logo
+        display: block
+        width: 240px
+        margin: 0 auto
+    .text
+        padding: 3em 0
+        font-size: 90%
+        opacity: 0.7
+        text-align: center
+        line-height: 1.7
+        p
+            padding: 0.5em 0.6em
 
 .Story
-
+    .article
+        text-align: center
+        color: #111
+        h1
+            line-height: 1
+            padding: 3.4em 0 3.5em
+            font-size: 130%
+            span
+                display: block
+                line-height: 1.2
+                &.en
+                    font-size: 18px
+        .text
+            // opacity: 0.8
+            text-align: left
+            line-height: 1.7
+            font-size: 90%
+            padding: 0.8em 2em 1.8em
+            br
+                display: none
+            p
+                padding: 0.6em 0
+        img
+            width: 90%
 .Product
     display: block
     width: 100%
@@ -51,20 +91,34 @@
             width: 72%
             padding: 20px 0 26px
             &.base
-                animation: slide-in-left 0.4s ease-out
+                li:nth-last-child(1)
+                    animation: slide-in-left 0.2s ease both
+                li:nth-last-child(2)
+                    animation: slide-in-left 0.3s ease both
+                li:nth-last-child(3)
+                    animation: slide-in-left 0.55s ease both
+                li:nth-last-child(4)
+                    animation: slide-in-left 0.9s ease both
                 @keyframes slide-in-left
                     from
                         transform: translateX(30px)
-                        opacity: 0.4
+                        opacity: 0
                     to
                         transform: translateX(0px)
                         opacity: 1
             &.filter
-                animation: slide-in-right 0.4s ease-out
+                li:nth-child(1)
+                    animation: slide-in-right 0.2s ease both
+                li:nth-child(2)
+                    animation: slide-in-right 0.3s ease both
+                li:nth-child(3)
+                    animation: slide-in-right 0.55s ease both
+                li:nth-child(4)
+                    animation: slide-in-right 0.9s ease both
                 @keyframes slide-in-right
                     from
                         transform: translateX(-30px)
-                        opacity: 0.4
+                        opacity: 0
                     to
                         transform: translateX(0px)
                         opacity: 1
@@ -88,6 +142,7 @@
 
     .selected-item-container
         // position: absolute
+        box-sizing: border-box
         position: relative
         top: 0
         left: 0
@@ -95,11 +150,11 @@
         justify-content: center
         align-items: center
         width: 100%
-        min-height: calc(100vh - 100px)
+        min-height: calc(100vh - 240px)
         background: var(--selected-item-bg-color)
         text-align: center
         // padding: 3em 0
-        padding: 0 0 3em
+        padding: 0 1em 3em
 
         // .base-fragrance, .filter-fragrance
         .fragrance
@@ -110,6 +165,7 @@
             line-height: 1.3
             filter: blur(20px)
             opacity: 0
+            font-size: 90%
             &.loaded
                 animation: fade-in 1.2s ease both
                 @keyframes fade-in
@@ -120,4 +176,11 @@
                 max-width: 90%
                 padding: 20px
             .text
-                padding: 0.3em 0.4em
+                padding: 1em 0 0.6em
+            .text.description
+                padding: 2em 0 1.2em
+                strong
+                    font-size: 105%
+            .product-name
+                font-size: 105%
+                padding-bottom: 0.7em

@@ -4,9 +4,9 @@ import SvgButton from "./SvgButton"
 const Designer = () => (
     <div className="Designer">
         <h1 className="title">
-            <div>トータルファッションクリエイター</div>
-            <div>Takeru Yamashita</div>
-            <div>山下 武尊</div>
+            <div className="ja">トータルファッションクリエイター</div>
+            <div className="en">Takeru Yamashita</div>
+            <div className="ja">山下 武尊</div>
         </h1>
         <div className="image"></div>
         <div className="description">

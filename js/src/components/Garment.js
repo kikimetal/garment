@@ -5,6 +5,7 @@ import DocumentTitle from "react-document-title"
 import PropTypes from "prop-types"
 // import MdApps from 'react-icons/lib/md/apps'
 import MdLineWeight from "react-icons/lib/md/line-weight"
+// import MdSubject from "react-icons/lib/md/subject"
 
 import EdgeLine from "./EdgeLine"
 import Button from "./Button"
