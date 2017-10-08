@@ -1268,7 +1268,7 @@
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  min-height: calc(100vh - 30px);
+  min-height: 100vh;
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(var(--selected-item-bg-color)));
   background: linear-gradient(180deg, #fff, var(--selected-item-bg-color));
   text-align: center;

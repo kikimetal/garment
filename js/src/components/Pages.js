@@ -155,7 +155,7 @@ export class Product extends React.Component{
                 <div onTouchMove={this.navOn} onClick={this.navToggle}>
                     <h1 className="page-title">Product</h1>
 
-                    <div className="selected-item-container" onLoad={()=>{setTimeout(this.navOff, 200)}}>
+                    <div className="selected-item-container" onLoad={()=>{setTimeout(this.navOff, 300)}}>
                         <Switch>
                             <Route exact path={`${path}/`} component={Cyan} />
                             <Route exact path={`${path}/cyan`} component={Cyan} />
