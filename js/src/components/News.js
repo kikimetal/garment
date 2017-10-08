@@ -21,7 +21,7 @@ export default class News extends React.Component{
                     <p className="text">
                         新宿伊勢丹 サロンドパルファン<br/>
                         ガーメントイベント 開催<br/>
-                    申し込みは下記アドレスからお願い致します。<br/>
+                        申し込みは下記アドレスからお願い致します。<br/>
                     </p>
                     <DelayLink to="http://isetan.mistore.jp/store/shinjuku/floor/main_1f/beauty/index.html;jsessionid=GB85ZJQSQ1KRW6qHcC6TjygBKhT6RvQJ8QHR7kBn1JCL4J91n0P8!-675519718">
                         <SvgButton>isetan.mistore.jp</SvgButton>
