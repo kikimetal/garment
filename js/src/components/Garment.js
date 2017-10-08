@@ -8,19 +8,17 @@ import MdLineWeight from "react-icons/lib/md/line-weight"
 // import MdSubject from "react-icons/lib/md/subject"
 
 import EdgeLine from "./EdgeLine"
-import Button from "./Button"
-import SvgButton from "./SvgButton"
+// import SvgButton from "./SvgButton"
 import NotFound from "./NotFound"
 import ScrollToTopOnMount from "./ScrollToTopOnMount"
-import TransitionMotionDemo from "./TransitionMotionDemo"
-import ParallaxDemo from "./ParallaxDemo"
-import Designer from "./Designer"
+// import TransitionMotionDemo from "./TransitionMotionDemo"
+// import ParallaxDemo from "./ParallaxDemo"
+// import Designer from "./Designer"
 import Footer from "./Footer"
 import FooterNav from "./FooterNav"
 import GarmentNav from "./GarmentNav"
 import * as Pages from "./Pages"
-import RouteTransition from "./RouteTransitionDemo"
-import SpreadCircle from "./SpreadCircle"
+// import RouteTransition from "./RouteTransitionDemo"
 
 export default class Garment extends React.Component{
     constructor(props){
@@ -71,7 +69,6 @@ export default class Garment extends React.Component{
                 </div>
                 <GarmentNav path={path} show={this.state.isShowNav} onClickHideNav={this.hideNav} onClickHideNavDelay={this.hideNavDelay} />
 
-                {/*}<RouteTransition pathname={ location.pathname } className={`blur-container ${this.state.isShowNav && "on"}`}>*/}
                 <div className={`blur-container ${this.state.isBlur && "on"} ${this.state.isShowNav && "on"}`}>
                     <Switch>
                         <Route exact path={path} component={Pages.Home} />
@@ -81,7 +78,6 @@ export default class Garment extends React.Component{
                         <Route component={NotFound} />
                     </Switch>
                 </div>
-                {/*</RouteTransition>*/}
 
                 <FooterNav onClick={this.showNav} />
                 <Footer />

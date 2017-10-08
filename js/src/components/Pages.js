@@ -216,13 +216,13 @@ class Fragrance extends React.Component{
         this.state = { loaded: false }
     }
     componentDidMount(){
+        // scrollto this top
         const y = document.querySelector(".Garment .page-title").getBoundingClientRect().height
         window.scrollTo(0, y)
     }
     render(){
         return (
             <div className={`fragrance ${this.state.loaded}`}>
-                {/*<ScrollToThisOnMount/>*/}
                 <img onLoad={()=>this.setState({loaded: "loaded"})} src={`/image/bottle_photo/${this.props.en}.jpg`} alt={`ガーメント${this.props.ja}の画像`} />
                 <div className="text description">
                     {this.props.children}
