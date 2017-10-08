@@ -27,7 +27,9 @@ export const Home = props => (
         <div className="article">
             <img className="logo reposition-center" src="/image/tag-logo.png" />
             <div className="text">
-                <p><b>ファッションのように、<br className="mobile"/>香りで自由に個性を表現したい。</b></p>
+                <p>
+                    <b>ファッションのように、<br className="mobile"/>香りで自由に個性を表現したい。</b>
+                </p>
                 <p>
                     自由に洋服を選ぶように、<br className="mobile"/>自分のこだわりを香りで多彩に表現できる<br/>
                     「フレグランスフィルタリング」という<br className="mobile"/>新しい香りの着こなし方。
@@ -36,7 +38,6 @@ export const Home = props => (
         </div>
 
         <News/>
-
     </div>
 )
 
@@ -52,61 +53,26 @@ export const Story = props => (
         <h1 className="page-title">STORY</h1>
         <div className="article">
 
-            <h1 className="common-title">BASE FRAGRANCE</h1>
-            <div className="text">
-                <p>ベースフレグランスは、色から感じるイメージを香りで表現した香水です。</p>
-                <p>「今日は何色の服を着よう？」</p>
-                <p>そんな感覚で香りをまとって、お気に入りの香りをお楽しみください。</p>
-            </div>
+            <section className="common-style">
+                <h1 className="title">FRAGRANCE FILTERING</h1>
+                <img className="ff01" src="/image/ff01.jpg"/>
+                <div className="text">
+                    <p>写真の色彩を操るレンズフィルターからインスピレーションを受けた「フレグランスフィルタリング」。</p>
+                    <p>ベースとフィルターを重ねる「フレグランスフィルタリング」により、ベースの香りを活かしながら、フィルターの特徴を加え、自由に香りを着こなすことができます。</p>
+                    <p>その日の気分、ファッション、シーンに合わせてフィルターを選び、ベースフレグランスに吹き重ねてお使いください。</p>
+                </div>
+                <img className="ff02" src="/image/ff02.jpg"/>
+                <div className="text">
+                    <p>ベースフレグランスの個性あふれる香りは単独でもお使いいただけますが、フィルターを使い分けると、スタイリングの幅がぐっと広がります。</p>
+                    <p>複数のフィルターを重ねて、香りをより繊細に表現したり、吹き重ねる回数を増やして、フィルターの特徴をさらに強調したり、「フレグランスフィルタリング」にルールはありません。</p>
+                    <p>異なるベースフレグランスを組み合わせて、コラージュするように新しい香りを創作することもできます。</p>
+                    <p>自分の好きなスタイリングを生み出せる、新しいフレグランスの世界＜ガーメント＞をお楽しみください。</p>
+                </div>
+            </section>
 
-            <h1 className="common-title">FRAGRANCE FILTER</h1>
-            <div className="text">
-                <p>フレグランスフィルターは、洋服の特徴や生地の質感を表現した香水です。</p>
-                <p>「エレガントに仕上げたい」「今日は“かわいい”をプラスして」「さらっとカジュアルなスタイルに」</p>
-                <p>加えたいテイストのフィルターをベースと組み合わせて、自分らしいスタイリングをお楽しみください。</p>
-            </div>
-
-            <h1 className="common-title">FRAGRANCE FILTERING</h1>
-            <img className="ff01" src="/image/ff01.jpg"/>
-            <div className="text">
-                <p>
-                    写真の色彩を操るレンズフィルターから<br className="mobile"/>インスピレーションを受けた<br/>
-                    「フレグランスフィルタリング」。
-                </p>
-                <p>
-                    ベースとフィルターを重ねる<br className="mobile"/>「フレグランスフィルタリング」により、<br/>
-                ベースの香りを活かしながら、<br className="mobile"/>フィルターの特徴を加え、<br/>
-                    自由に香りを着こなすことができます。
-                </p>
-                <p>
-                    その日の気分、ファッション、<br className="mobile"/>シーンに合わせてフィルターを選び、<br/>
-                    ベースフレグランスに吹き重ねてお使いください。
-                </p>
-            </div>
-            <img className="ff02" src="/image/ff02.jpg"/>
-            <div className="text">
-                <p>
-                    ベースフレグランスの個性あふれる香りは<br className="mobile"/>単独でもお使いいただけますが、<br/>
-                フィルターを使い分けると、<br className="mobile"/>スタイリングの幅がぐっと広がります。
-                </p>
-                <p>
-                    複数のフィルターを重ねて、<br className="mobile"/>香りをより繊細に表現したり、<br/>
-                吹き重ねる回数を増やして、<br className="mobile"/>フィルターの特徴をさらに強調したり、<br/>
-                    「フレグランスフィルタリング」にルールはありません。
-                </p>
-                <p>
-                    異なるベースフレグランスを組み合わせて、<br/>
-                    コラージュするように新しい香りを創作することもできます。
-                </p>
-                <p>
-                    自分の好きなスタイリングを生み出せる<br/>
-                    新しいフレグランスの世界＜ガーメント＞をお楽しみください。
-                </p>
-            </div>
         </div>
 
         <Designer/>
-
     </div>
 )
 
@@ -168,6 +134,25 @@ export class Product extends React.Component{
                             <Route exact path={`${path}/denim`} component={Denim} />
                         </Switch>
                     </div>
+
+                    <section className="common-style">
+                        <h1 className="title">BASE FRAGRANCE</h1>
+                        <div className="text">
+                            <p>ベースフレグランスは、色から感じるイメージを香りで表現した香水です。</p>
+                            <p>「今日は何色の服を着よう？」</p>
+                            <p>そんな感覚で香りをまとって、お気に入りの香りをお楽しみください。</p>
+                        </div>
+                    </section>
+
+                    <section className="common-style">
+                        <h1 className="title">FRAGRANCE FILTER</h1>
+                        <div className="text">
+                            <p>フレグランスフィルターは、洋服の特徴や生地の質感を表現した香水です。</p>
+                            <p>「エレガントに仕上げたい」「今日は“かわいい”をプラスして」「さらっとカジュアルなスタイルに」</p>
+                            <p>加えたいテイストのフィルターをベースと組み合わせて、自分らしいスタイリングをお楽しみください。</p>
+                        </div>
+                    </section>
+
                 </div>
 
                 <nav className={`product-nav ${this.state.isShowNav || "hide"}`}>

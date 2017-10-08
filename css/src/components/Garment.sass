@@ -3,15 +3,16 @@
         position: absolute
         width: 100%
         overflow-x: hidden
-    .blur-container > *
+
+    // .blur-container > *
         transition: 0.9s ease-out
         // transition-delay: 0.3s
         // transform-origin: center
-    .blur-container.on > *
-        // filter: blur(12px) !important
+
+    // .blur-container.on > *
         filter: grayscale(40%)
+        // filter: blur(12px) !important
         // transform: scaleX(1.02) !important
-        // transform: scaleX(0.94) !important
 
     .page-title
         padding: 1.75em 1.18em 1.5em
@@ -19,6 +20,7 @@
         font-weight: normal
         letter-spacing: 0.5px
         border-bottom: 1px solid #e6e6e6
+        color: #222
 
     .nav-btn
         position: fixed
