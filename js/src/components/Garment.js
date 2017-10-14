@@ -57,7 +57,6 @@ export default class Garment extends React.Component{
         setTimeout(()=>{
             this.setState({
                 isShowNav: false,
-                loaded: false,
             })
         }, 400)
     }
@@ -72,7 +71,7 @@ export default class Garment extends React.Component{
                 </div>
                 <GarmentNav path={path} show={this.state.lg ? true : this.state.isShowNav} onClickHideNav={this.hideNav} onClickHideNavDelay={this.hideNavDelay} />
 
-                <div className={`page-route-container ${this.state.loaded && "loaded"}`}>
+                <div className={`page-route-container`}>
                     <Switch>
                         <Route exact path={path} component={Pages.Home} />
                         <Route exact path={`${path}/home`} component={Pages.Home} />
@@ -83,10 +82,10 @@ export default class Garment extends React.Component{
                         <Route exact path={`${path}/terms-of-use`} component={Pages.TermsOfUse} />
                         <Route component={NotFound} />
                     </Switch>
-                </div>
 
-                <FooterNav onClick={this.showNav} />
-                <Footer path={path}/>
+                    <FooterNav onClick={this.showNav} />
+                    <Footer path={path}/>
+                </div>
 
             </div>
         )

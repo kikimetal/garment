@@ -183,32 +183,10 @@ section.common-style img {
 
 @media screen and (min-width: 770px) {
   section.common-style .text {
-    text-align: center;
+    text-align: left;
   }
   section.common-style img {
     max-width: 48%;
     height: auto;
-  }
-}
-
-@-webkit-keyframes page-fade-in {
-  from {
-    -webkit-filter: blur(10px);
-    filter: blur(10px);
-  }
-  to {
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
-  }
-}
-
-@keyframes page-fade-in {
-  from {
-    -webkit-filter: blur(10px);
-    filter: blur(10px);
-  }
-  to {
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
   }
 }

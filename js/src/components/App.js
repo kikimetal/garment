@@ -31,7 +31,7 @@ export default class App extends React.Component{
                 <BrowserRouter>
                     <Switch>
                         <Route exact path="/" component={Entrance} />
-                        <Route path="/garment-dev" component={Garment} />
+                        <Route path="/garment" component={Garment} />
                         <Route component={NotFound} />
                     </Switch>
                 </BrowserRouter>

@@ -44,14 +44,15 @@
         flex-flow: column wrap
         justify-content: space-around
         align-items: center
-        width: 100%
-        // height: 90px
-        width: calc(100% - var(--garment-nav-width))
+        // width: 100%
+        width: calc(100vw - var(--garment-nav-width))
         background: var(--nav-bg-color)
         color: var(--nav-text-color)
         z-index: 10
         opacity: 0.9
         transition: 0.5s ease
+        @media screen and (min-width: 1280px)
+            left: auto
         .product-nav-title
             display: flex
             flex-flow: row wrap

@@ -5,6 +5,7 @@ import {Switch, NavLink, Link, Route} from "react-router-dom"
 import {colors} from "../define"
 import SpreadCircle from "./SpreadCircle"
 import SvgButton from "./SvgButton"
+import DelayLink from "./DelayLink"
 import ScrollToTopOnMount from "./ScrollToTopOnMount"
 import EdgeLine from "./EdgeLine"
 import Designer from "./Designer"
@@ -113,9 +114,9 @@ export const Contact = () => (
             </p>
 
             <div className="link">
-                <a href="http://maylily.co.jp/contact/">
+                <DelayLink to="http://maylily.co.jp/contact/">
                     <SvgButton width={245}>お問い合わせフォーム</SvgButton>
-                </a>
+                </DelayLink>
             </div>
         </div>
     </div>
@@ -301,8 +302,8 @@ export const PrivacyPolicy = () => (
             <p>当社の個人情報の取り扱いに関するお問い合わせについては、こちらからお願い致します。</p>
 
             <div className="link">
-                <Link to="/garment-dev/contact">
-                    <SvgButton>お問い合わせ先</SvgButton>
+                <Link to="/garment/contact">
+                    <SvgButton>お問い合わせ</SvgButton>
                 </Link>
             </div>
         </div>

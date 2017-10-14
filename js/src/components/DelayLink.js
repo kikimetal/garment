@@ -10,7 +10,7 @@ export default class DelayLink extends React.Component{
             e.preventDefault()
             setTimeout(()=>{
                 location.href = to
-            }, 260)
+            }, 290)
         }
         return (
             <div onTouchTap={delayJump}>
