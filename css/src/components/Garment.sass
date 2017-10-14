@@ -1,18 +1,12 @@
 .Garment
-    .RouteTransitionContainer
+    // .RouteTransitionContainer
         position: absolute
         width: 100%
         overflow-x: hidden
-
-    // .blur-container > *
-        transition: 0.9s ease-out
-        // transition-delay: 0.3s
-        // transform-origin: center
-
-    // .blur-container.on > *
-        filter: grayscale(40%)
-        // filter: blur(12px) !important
-        // transform: scaleX(1.02) !important
+    .page-route-container
+        @media screen and (min-width: 1280px)
+            box-sizing: border-box
+            width: calc(100% - var(--garment-nav-width))
 
     .page-title
         padding: 1.75em 1.18em 1.5em
@@ -21,6 +15,11 @@
         letter-spacing: 0.5px
         border-bottom: 1px solid #e6e6e6
         color: #222
+        text-align: left
+        @media screen and (min-width: 770px)
+            font-size: 32px
+        @media screen and (min-width: 1280px)
+            font-size: 40px
 
     .nav-btn
         position: fixed

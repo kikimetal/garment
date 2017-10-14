@@ -1,6 +1,5 @@
 .News
     line-height: 1
-    // background: pink
     text-align: center
     h1
         span.icon
@@ -8,14 +7,47 @@
             top: -2px
             left: 0
 
-    section
-        padding: 1rem 0.3rem 2rem
-        border: 1px dashed
-        margin: 2rem 1rem
+    section.NewsSection
+        position: relative
+        --color: #eee
+        background: repeating-linear-gradient(135deg, transparent, transparent 3px, var(--color) 3px, var(--color) 10px), repeating-linear-gradient(45deg, transparent, transparent 3px, var(--color) 3px, var(--color) 10px)
+        background-blend-mode: multiply
+        padding: 3px
+        margin: 6px 4px
+        display: flex
+        flex-flow: column wrap
+        justify-content: center
+        min-height: 200px
+        cursor: default
+        &.hot
+            --color: #ffe8f0
+        .inner
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            margin: auto
+            width: calc(100% - 2px)
+            height: calc(100% - 2px)
+            background: #fafafa
+            opacity: 0.86
+            transition: all 0.3s ease
+        &:hover
+            .inner
+                width: 90%
+                height: 98%
+                border-radius: 8px
+                opacity: 1
         .calendar
             padding: 0.6em 0
             font-size: 1.1rem
             opacity: 0.6
+            z-index: 1
         .text
             font-size: 0.85rem
             line-height: 1.4
+            z-index: 1
+
+        @media screen and (min-width: 770px)
+            margin: 2rem 1rem

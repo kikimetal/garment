@@ -22,13 +22,6 @@ export default class GarmentNav extends React.Component{
     componentWillUnmount(){
         window.removeEventListener("deviceorientation", this.handleDeviceOrientation)
     }
-    // componentWillReceiveProps(nextProps){
-    //     if(nextProps.show){
-    //         window.addEventListener("deviceorientation", this.handleDeviceOrientation)
-    //     }else{
-    //         window.removeEventListener("deviceorientation", this.handleDeviceOrientation)
-    //     }
-    // }
     handleDeviceOrientation(e){
         if(!this.props.show) return
 
@@ -49,12 +42,13 @@ export default class GarmentNav extends React.Component{
         const hideNav = this.props.onClickHideNav
         const hideNavDelay = this.props.onClickHideNavDelay
         const colorAttr = {
-            color: "#444",
-            colorHover: "#111",
+            color: "#333",
+            colorHover: "#060606",
         }
         return (
             <nav className={`GarmentNav ${isShow}`}>
                 <div className="bg" style={{transform: this.state.bgTranslate}}></div>
+                <div className="logo"></div>
                 <ul>
                     <li className="margin" onClick={hideNav}></li>
                     <li><NavLink to={`${path}/home`} onClick={hideNavDelay}><SvgButton {...colorAttr}>HOME</SvgButton></NavLink></li>

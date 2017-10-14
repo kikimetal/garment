@@ -16,38 +16,43 @@ export default class News extends React.Component{
             <div className="News">
                 <h1 className="common-title"><span className="icon"><MdNotificationsActive/></span> NEWS</h1>
 
-                <section>
-                    <Calendar>2017.10.21</Calendar>
-                    <p className="text">
+                <div className="flex-2">
+
+                    <NewsSection date="2017.11.01" hot>
+                        新宿伊勢丹 定番販売開始
+                    </NewsSection>
+
+                    <NewsSection date="2017.10.21" hot>
                         新宿伊勢丹 サロンドパルファン<br/>
                         ガーメントイベント 開催<br/>
-                        申し込みは下記アドレスからお願い致します。<br/>
-                    </p>
-                    <DelayLink to="http://isetan.mistore.jp/store/shinjuku/floor/main_1f/beauty/index.html;jsessionid=GB85ZJQSQ1KRW6qHcC6TjygBKhT6RvQJ8QHR7kBn1JCL4J91n0P8!-675519718">
-                        <SvgButton>isetan.mistore.jp</SvgButton>
-                    </DelayLink>
-                </section>
+                        申し込みは下記アドレスからお願い致します。
+                        <DelayLink to="http://isetan.mistore.jp/store/shinjuku/floor/main_1f/beauty/index.html;jsessionid=GB85ZJQSQ1KRW6qHcC6TjygBKhT6RvQJ8QHR7kBn1JCL4J91n0P8!-675519718">
+                            <SvgButton size={17} width={200}>ISETAN.MISTORE.JP</SvgButton>
+                        </DelayLink>
+                    </NewsSection>
 
-                <section>
-                    <Calendar>2017.10.18</Calendar>
-                    <p className="text">
+                    <NewsSection date="2017.10.18" hot>
                         新宿伊勢丹 サロンドパルファン 出展
-                    </p>
-                </section>
+                    </NewsSection>
 
-                <section>
-                    <Calendar>2017.07.10</Calendar>
-                    <p className="text">
+                    <NewsSection date="2017.07.10">
                         イセタンメンズサロン 大阪<br/>
                         ガーメント定番販売開始
-                    </p>
-                </section>
+                    </NewsSection>
+
+                </div>{/* flex-2 */}
 
             </div>
         )
     }
 }
 
-const Calendar = props => (
-    <p className="calendar">{props.children}</p>
+const NewsSection = props => (
+    <section className={`NewsSection ${props.hot && "hot"}`}>
+        <div className="inner"></div>
+        <div className="calendar">{props.date}</div>
+        <div className="text">
+            {props.children}
+        </div>
+    </section>
 )

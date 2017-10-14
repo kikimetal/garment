@@ -6,26 +6,26 @@
         display: flex
         flex-flow: column wrap
         justify-content: center
-        background: #444
+        background: #222
         color: #888
         font-size: 11px
         text-decoration: none
         text-align: center
     .header
         height: var(--bar-height)
-        box-shadow: -1px 0 4px 0px #333 inset
+        box-shadow: -1px 0 4px 0px #111 inset
         letter-spacing: 1.2px
     .footer
         position: relative
         height: calc(600px - 10vw)
         min-height: calc(100vh - var(--bar-height))
-        box-shadow: 1px 0 4px 0px #333 inset
+        box-shadow: 1px 0 4px 0px #111 inset
         .copyright
             position: absolute
             left: 0
             right: 0
             bottom: 1.2em
-            
+
     .main
         box-sizing: border-box
 
@@ -41,8 +41,8 @@
         width: 100%
         height: calc(100vh - var(--bar-height) * 2)
 
-        background: #eee
-        box-shadow: 0 0 13px 0 #fff inset
+        background: #fff
+        box-shadow: 0 0 13px 0 #eee inset
         overflow: hidden
 
         & > *
@@ -50,7 +50,7 @@
             @keyframes loaded-open
                 from
                     filter: blur(6px)
-                    transform: scale(1.1)
+                    transform: scale(1.04)
                 to
                     filter: blur(0)
                     transform: scale(1)
