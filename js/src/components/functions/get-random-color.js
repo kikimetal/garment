@@ -1,6 +1,6 @@
-const getRandomColor = (type = null) => {
+import getRandomInt from "./getRandomInt"
 
-    const getRandomInt = (min, max) => Math.floor( Math.random() * (max + 1 - min) ) + min
+const getRandomColor = (type = null) => {
 
     if(!type){
 

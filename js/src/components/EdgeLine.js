@@ -1,5 +1,6 @@
 import React from "react"
 import {Motion, spring, presets, StaggeredMotion, TransitionMotion} from 'react-motion'
+import getRandomInt from "./functions/getRandomInt"
 
 export default class EdgeLine extends React.Component{
     constructor(props){
@@ -24,12 +25,12 @@ export default class EdgeLine extends React.Component{
     }
     render(){
         const opacitySpring = spring(0, {stiffness: 8, damping: 5, precision: 0.05})
-        const lengthSpringOption = {stiffness: 32, damping: 11, precision: 0.01}
+        const lengthSpringOption = {stiffness: 28, damping: 11, precision: 0.01}
         let strokeWidth = (this.state.ww / 100) * 4
         strokeWidth = strokeWidth < 20 ? strokeWidth + 1 : 21; // max length
         const dashlineDiff = (strokeWidth - 1) / 4
         return (
-            <svg className="EdgeLine">
+            <svg className={`EdgeLine color-${getRandomInt(0,2)}`}>
                 <Motion defaultStyle={{length: 0, opacity: 2}} style={{length: spring(this.state.ww - strokeWidth/2 , lengthSpringOption), opacity: opacitySpring}}>
                     {value => <g className="top" strokeOpacity={value.opacity}>
                         <line className="line" x1={0} y1={0} x2={value.length} y2={0} strokeWidth={strokeWidth} />
