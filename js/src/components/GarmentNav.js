@@ -42,7 +42,7 @@ export default class GarmentNav extends React.Component{
         const hideNav = this.props.onClickHideNav
         const hideNavDelay = this.props.onClickHideNavDelay
         const colorAttr = {
-            color: "#333",
+            color: "#494949",
             colorHover: "#060606",
         }
         return (
@@ -54,7 +54,7 @@ export default class GarmentNav extends React.Component{
                     <li><NavLink to={`${path}/home`} onClick={hideNavDelay}><SvgButton {...colorAttr}>HOME</SvgButton></NavLink></li>
                     <li><NavLink to={`${path}/product`} onClick={hideNavDelay}><SvgButton {...colorAttr}>PRODUCTS</SvgButton></NavLink></li>
                     <li><NavLink to={`${path}/story`} onClick={hideNavDelay}><SvgButton {...colorAttr}>STORY</SvgButton></NavLink></li>
-                    <li><DelayLink to="/"><SvgButton {...colorAttr}>SHOP</SvgButton></DelayLink></li>
+                    <li><DelayLink to="/"><SvgButton {...colorAttr}>ONLINE SHOP</SvgButton></DelayLink></li>
                     <li className="margin" onClick={hideNav}><FaTimesCircle/></li>
                 </ul>
             </nav>

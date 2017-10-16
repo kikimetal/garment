@@ -1,16 +1,34 @@
 .FooterNav
-    display: flex
-    flex-flow: row wrap
-    justify-content: center
-    align-items: center
+    display: block
     width: 100%
-    height: 200px
-    background-image: url("/image/street.png"), linear-gradient(#ccc, #ccc)
-    background-position: 90% 20%
-    background-size: cover
-    background-blend-mode: screen
-    font-size: 1.3rem
-    box-shadow: 0 0 40px 0 #eee inset
+    .menu-container
+        display: flex
+        flex-flow: row wrap
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: 200px
+        background-image: url("/image/street.png"), linear-gradient(#ccc, #ccc)
+        background-position: 90% 20%
+        background-size: cover
+        background-blend-mode: screen
+        font-size: 1.3rem
+        box-shadow: 0 0 40px 0 #eee inset
+        @media screen and (min-width: 770px)
+            background-position: 100% 4%
+        @media screen and (min-width: 1280px)
+            display: none
 
-    @media screen and (min-width: 1280px)
-        display: none
+    .info-container
+        display: flex
+        flex-flow: column wrap
+        justify-content: center
+        align-items: center
+        width: 100%
+        min-height: 200px
+        box-sizing: border-box
+        padding: 2rem 0
+        text-align: center
+        line-height: 1.4
+        @media screen and (min-width: 770px)
+            padding: 3rem 0

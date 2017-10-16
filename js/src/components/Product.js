@@ -73,7 +73,7 @@ export default class Product extends React.Component{
                         onMouseOver={this.navOn}
                         >
                         <h1 className="title">WARDROBE</h1>
-                        <div className="wardrobe">
+                        <div className="wardrobe flex-2">
                             <img className="wardrobe" src="/image/wardrobe.jpg" />
                             <div className="text">
                                 <p>
@@ -87,32 +87,6 @@ export default class Product extends React.Component{
                                 10mL x 6(本) 22,000円
                                 </p>
                             </div>
-                        </div>
-                    </section>
-
-                    <section
-                        className="common-style"
-                        onTouchMove={this.navOff}
-                        onMouseOver={this.navOff}
-                        >
-                        <h1 className="title">BASE FRAGRANCE</h1>
-                        <div className="text">
-                            <p>ベースフレグランスは、色から感じるイメージを香りで表現した香水です。</p>
-                            <p>「今日は何色の服を着よう？」</p>
-                            <p>そんな感覚で香りをまとって、お気に入りの香りをお楽しみください。</p>
-                        </div>
-                    </section>
-
-                    <section
-                        className="common-style"
-                        onTouchMove={this.navOff}
-                        onMouseOver={this.navOff}
-                        >
-                        <h1 className="title">FRAGRANCE FILTER</h1>
-                        <div className="text">
-                            <p>フレグランスフィルターは、洋服の特徴や生地の質感を表現した香水です。</p>
-                            <p>「エレガントに仕上げたい」「今日は“かわいい”をプラスして」「さらっとカジュアルなスタイルに」</p>
-                            <p>加えたいテイストのフィルターをベースと組み合わせて、自分らしいスタイリングをお楽しみください。</p>
                         </div>
                     </section>
 

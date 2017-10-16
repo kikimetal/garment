@@ -94,7 +94,7 @@ SvgButton.defaultProps = {
     width: 200,
     color: null, // 強制力大
     colorHover: null, // 強制力大
-    shapeColor: "#888",
+    shapeColor: "#666",
     shapeColorHover: "#222",
     textColor: null,
     textColorHover: null,

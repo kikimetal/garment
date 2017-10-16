@@ -16,6 +16,8 @@ import Garment from "./Garment"
 import NotFound from "./NotFound"
 import SvgButton from "./SvgButton"
 
+import Maintenance from "./Maintenance"
+
 export default class App extends React.Component{
     constructor(props){
         super(props)
@@ -26,6 +28,8 @@ export default class App extends React.Component{
     render(){
         return (
             <div className="App">
+                <Maintenance/>
+
                 <DocumentTitle title="TakeruYamashita" />
 
                 <BrowserRouter>

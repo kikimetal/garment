@@ -73,6 +73,24 @@ export const Story = props => (
                 </div>
             </section>
 
+            <section className="common-style">
+                <h1 className="title">BASE FRAGRANCE</h1>
+                <div className="text center">
+                    <p>ベースフレグランスは、色から感じるイメージを香りで表現した香水です。</p>
+                    <p>「今日は何色の服を着よう？」</p>
+                    <p>そんな感覚で香りをまとって、お気に入りの香りをお楽しみください。</p>
+                </div>
+            </section>
+
+            <section className="common-style">
+                <h1 className="title">FRAGRANCE FILTER</h1>
+                <div className="text center">
+                    <p>フレグランスフィルターは、洋服の特徴や生地の質感を表現した香水です。</p>
+                    <p>「エレガントに仕上げたい」「今日は“かわいい”をプラスして」「さらっとカジュアルなスタイルに」</p>
+                    <p>加えたいテイストのフィルターをベースと組み合わせて、自分らしいスタイリングをお楽しみください。</p>
+                </div>
+            </section>
+
         </div>
 
         <Designer/>

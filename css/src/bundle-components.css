@@ -394,6 +394,11 @@
 }
 
 .FooterNav {
+  display: block;
+  width: 100%;
+}
+
+.FooterNav .menu-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -419,9 +424,44 @@
   box-shadow: 0 0 40px 0 #eee inset;
 }
 
+@media screen and (min-width: 770px) {
+  .FooterNav .menu-container {
+    background-position: 100% 4%;
+  }
+}
+
 @media screen and (min-width: 1280px) {
-  .FooterNav {
+  .FooterNav .menu-container {
     display: none;
+  }
+}
+
+.FooterNav .info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  min-height: 200px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2rem 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 770px) {
+  .FooterNav .info-container {
+    padding: 3rem 0;
   }
 }
 
@@ -697,7 +737,7 @@
 }
 
 .News section.NewsSection.hot {
-  --color: #ffe8f0;
+  --color: #ebf2f5;
 }
 
 .News section.NewsSection .inner {
@@ -716,9 +756,7 @@
 }
 
 .News section.NewsSection:hover .inner {
-  width: 90%;
-  height: 98%;
-  border-radius: 8px;
+  height: 96%;
   opacity: 1;
 }
 
@@ -878,56 +916,6 @@
   --selected-item-bg-color: #f2f2f2;
   --nav-bg-color: #333;
   --nav-text-color: #bbb;
-}
-
-.Product .wardrobe {
-  text-align: center;
-}
-
-.Product .wardrobe img {
-  display: block;
-  width: 90%;
-  margin: 0 auto;
-  padding: 15px 0;
-}
-
-@media screen and (min-width: 770px) {
-  .Product .wardrobe {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-  .Product .wardrobe > * {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 48%;
-    flex: 0 1 48%;
-    height: auto;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  .Product .wardrobe > img {
-    width: 48%;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 48%;
-    flex: 0 1 48%;
-    padding: 1.3rem;
-    padding-left: 2rem;
-    padding-right: 1rem;
-    margin: 0;
-  }
-  .Product .wardrobe > .text {
-    margin-right: auto;
-    text-align: left;
-  }
 }
 
 .Product .product-nav {
