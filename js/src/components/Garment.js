@@ -28,14 +28,14 @@ export default class Garment extends React.Component{
     componentWillMount(){
         document.body.style.background = "#fafafa"
         this.setState({
-            lg: this.state.ww > 1280
+            lg: this.state.ww >= 1024
         })
         window.addEventListener("resize", ()=>{
             const ww = window.innerWidth
             this.setState({
                 ww: ww,
-                lg: ww > 1280,
-                isShowNav: ww > 1280 ? true : false,
+                lg: ww >= 1024,
+                isShowNav: ww >= 1024 ? true : false,
             })
         })
     }
@@ -75,8 +75,9 @@ export default class Garment extends React.Component{
                     <Switch>
                         <Route exact path={path} component={Pages.Home} />
                         <Route exact path={`${path}/home`} component={Pages.Home} />
-                        <Route path={`${path}/product`} component={Pages.Product} />
-                        <Route exact path={`${path}/story`} component={Pages.Story} />
+                        <Route path={`${path}/products`} component={Pages.Products} />
+                        <Route exact path={`${path}/concept`} component={Pages.Concept} />
+                        <Route exact path={`${path}/store`} component={Pages.Store} />
                         <Route exact path={`${path}/contact`} component={Pages.Contact} />
                         <Route exact path={`${path}/privacy-policy`} component={Pages.PrivacyPolicy} />
                         <Route exact path={`${path}/terms-of-use`} component={Pages.TermsOfUse} />

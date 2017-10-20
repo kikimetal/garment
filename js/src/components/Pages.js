@@ -14,9 +14,9 @@ import News from "./News"
 import FooterNav from "./FooterNav"
 
 
-import Product from "./Product"
+import Products from "./Products"
 
-export {Product}
+export {Products}
 
 export const Home = props => (
     <div className="Home">
@@ -41,59 +41,158 @@ export const Home = props => (
     </div>
 )
 
-export const Story = props => (
-    <div className="Story">
+export const Concept = props => (
+    <div className="Concept">
         <EdgeLine/>
         <ScrollToTopOnMount />
-        <DocumentTitle title="GARMENT::Story" />
-        <h1 className="page-title">STORY</h1>
+        <DocumentTitle title="GARMENT::Concept" />
+        <h1 className="page-title">CONCEPT</h1>
 
         <div className="article">
 
             <section className="common-style">
                 <h1 className="title">FRAGRANCE FILTERING</h1>
 
-                <div className="flex-2">
-                    <img className="ff01" src="/image/ff01.jpg"/>
-                    <div className="text">
-                        <p>写真の色彩を操るレンズフィルターからインスピレーションを受けた「フレグランスフィルタリング」。</p>
-                        <p>ベースとフィルターを重ねる「フレグランスフィルタリング」により、ベースの香りを活かしながら、フィルターの特徴を加え、自由に香りを着こなすことができます。</p>
-                        <p>その日の気分、ファッション、シーンに合わせてフィルターを選び、ベースフレグランスに吹き重ねてお使いください。</p>
-                    </div>
-                </div>
+                <p className="text concept-top-text">
+                    写真の色彩を操るレンズフィルターからインスピレーションを受けた<br className="lg"/>
+                    「フレグランスフィルタリング」。
+                </p>
 
                 <div className="flex-2">
+
+                    <img className="ff01" src="/image/ff01.jpg"/>
+                    <div className="text">
+                        <p>
+                            「フレグランスフィルタリング」とは、ベースフレグランスに
+                            フレグランスフィルターを吹き重ねること。
+                        </p>
+                        <p>
+                            ベースの香りをそのまま活かしながら、フィルターの特徴が加わります。
+                        </p>
+                        <p>
+                            その日の気分やファッションに合わせてフィルターを選び、
+                            自分らしいスタイルの香りに仕上げることができます。
+                        </p>
+                    </div>
+
                     <img className="ff02" src="/image/ff02.jpg"/>
                     <div className="text">
-                        <p>ベースフレグランスの個性あふれる香りは単独でもお使いいただけますが、フィルターを使い分けると、スタイリングの幅がぐっと広がります。</p>
-                        <p>複数のフィルターを重ねて、香りをより繊細に表現したり、吹き重ねる回数を増やして、フィルターの特徴をさらに強調したり、「フレグランスフィルタリング」にルールはありません。</p>
-                        <p>異なるベースフレグランスを組み合わせて、コラージュするように新しい香りを創作することもできます。</p>
-                        <p>自分の好きなスタイリングを生み出せる、新しいフレグランスの世界＜ガーメント＞をお楽しみください。</p>
+                        <p>
+                            「フレグランスフィルタリング」にルールはありません。
+                        </p>
+                        <p>
+                            吹き重ねる回数を増やしたり、複数のフィルターを重ねて、
+                            より繊細に香りを表現できます。
+                        </p>
+                        <p>
+                            また、上下で異なる香りをまとい、自分らしさを演出することもできます。
+                            自分のこだわりを多彩に表現できるGARMENTの世界をお楽しみください。
+                        </p>
                     </div>
+
                 </div>
             </section>
 
             <section className="common-style">
                 <h1 className="title">BASE FRAGRANCE</h1>
-                <div className="text center">
-                    <p>ベースフレグランスは、色から感じるイメージを香りで表現した香水です。</p>
-                    <p>「今日は何色の服を着よう？」</p>
-                    <p>そんな感覚で香りをまとって、お気に入りの香りをお楽しみください。</p>
+                <div className="text center lg-center">
+                    <p>
+                        ベースフレグランスは、色から感じるイメージを香りで表現した香水です。
+                    </p>
+                    <p>
+                        「今日は何色の服を着ようかな？」 まずはそんな感覚でお選びください。<br/>
+                        個性あふれるベースフレグランスは、単独でもお楽しみいただけます。
+                    </p>
+                    <p>
+                        オードトワレ／ユニセックス<br/>
+                        50mL 12,800円（税抜）
+                    </p>
+                    <Link to="/garment/products/cyan"><SvgButton width={245}>BASE FRAGRANCE</SvgButton></Link>
                 </div>
             </section>
 
             <section className="common-style">
                 <h1 className="title">FRAGRANCE FILTER</h1>
-                <div className="text center">
-                    <p>フレグランスフィルターは、洋服の特徴や生地の質感を表現した香水です。</p>
-                    <p>「エレガントに仕上げたい」「今日は“かわいい”をプラスして」「さらっとカジュアルなスタイルに」</p>
-                    <p>加えたいテイストのフィルターをベースと組み合わせて、自分らしいスタイリングをお楽しみください。</p>
+                <div className="text center lg-center">
+                    <p>
+                        フレグランスフィルターは、ベースフレグランスの香りを活かしながら、<br className="lg"/>
+                        その印象を変化させるために生まれた特徴的な香水です。
+                    </p>
+                    <p>
+                        洋服のデザインや質感を表現したフィルターのテイストを加えることができます。
+                    </p>
+                    <p>
+                        フレグランスフィルター／ユニセックス<br/>
+                        50mL 8,800円（税抜）
+                    </p>
+                    <Link to="/garment/products/fur"><SvgButton width={245}>FRAGRANCE FILTER</SvgButton></Link>
                 </div>
             </section>
 
         </div>
 
         <Designer/>
+    </div>
+)
+
+export const Store = () => (
+    <div className="Store">
+        <EdgeLine/>
+        <ScrollToTopOnMount />
+        <DocumentTitle title="GARMENT::Store" />
+        <h1 className="page-title">STORE</h1>
+        {/*<div className="article">
+            <section className="flex-2">
+                <img src="/image/onlinestore.jpg" />
+                <div className="text">
+                    ＜オンライン＞<br/>
+                    <b>ガーメントオンラインストア</b>
+                    <DelayLink to="/ec/html/"><SvgButton width={260}>GARMENT Online Store</SvgButton></DelayLink>
+                </div>
+            </section>
+            <section className="flex-2">
+                <img src="/image/takeru.jpg" />
+                <div className="text">
+                    ＜関東＞<br/>
+                    <b>伊勢丹新宿店本館1F フレグランスコーナー</b><br/><br/>
+
+                    160-0022 東京都新宿区新宿3-14-1<br/>
+                    TEL 03-3352-1111<br/>
+                    営業時間 10:30〜20:00
+                </div>
+            </section>
+            <section className="flex-2">
+                <img src="/image/takeru.jpg" />
+                <div className="text">
+                    ＜関西＞<br/>
+                    <b>イセタン メンズスタイル</b><br/><br/>
+
+                    〒530-8558 大阪市北区梅田3-1-3 ルクア イーレ8F<br/>
+                    TEL 06-4301-3922<br/>
+                    営業時間 10:00〜21:00
+                </div>
+            </section>
+        </div>*/}
+
+        <div style={{
+                display: "flex",
+                flexFlow: "column",
+                justifyContent: "center",
+                textAlign:"center",
+                minHeight: "calc(100vh - 300px)",
+            }}>
+            <div className="text">
+                ＜関西＞<br/>
+                <b>イセタン メンズスタイル</b><br/><br/>
+
+                〒530-8558<br className="mobile"/>
+                大阪市北区梅田3-1-3<br className="mobile"/>
+                ルクア イーレ8F<br/><br/>
+                TEL 06-4301-3922<br/>
+                営業時間 10:00〜21:00
+            </div>
+        </div>
+
     </div>
 )
 
@@ -325,7 +424,5 @@ export const PrivacyPolicy = () => (
                 </Link>
             </div>
         </div>
-
-
     </div>
 )

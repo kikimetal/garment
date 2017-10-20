@@ -1,5 +1,5 @@
 .Home,
-.Story,
+.Concept,
     .article
         animation: loaded-open 1s ease-out both
         @keyframes loaded-open
@@ -33,16 +33,28 @@
             p
                 padding: 0.5em 0.6em
 
-.Story
-    // animation: fade-in 1s ease-out both
+.Concept
     .article
-        text-align: center
-        color: #111
-        img.ff01
-            margin: 5% auto 0.5em
+        .concept-top-text
+            padding: 3em 2em
+            margin: 0
+            font-size: 1.05rem
+            font-weight: bold
+            text-align: center
             @media screen and (min-width: 770px)
-                margin: auto
+                padding: 1em
+                margin: 2.2em 0 0
 
+.Store
+    line-height: 1.6
+    .article
+        min-height: 90vh
+        text-align: center
+        img
+            max-width: 100%
+        @media screen and (max-width: 770px)
+            .text
+                padding-bottom: 1.1rem
 
 .Contact,
 .TermsOfUse,

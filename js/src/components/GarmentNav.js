@@ -4,7 +4,6 @@ import {NavLink} from "react-router-dom"
 import SvgButton from "./SvgButton"
 import DelayLink from "./DelayLink"
 
-// import MdOpenInNew from "react-icons/lib/md/open-in-new"
 import FaTimesCircle from "react-icons/lib/fa/times-circle"
 
 export default class GarmentNav extends React.Component{
@@ -52,9 +51,10 @@ export default class GarmentNav extends React.Component{
                 <ul>
                     <li className="margin" onClick={hideNav}></li>
                     <li><NavLink to={`${path}/home`} onClick={hideNavDelay}><SvgButton {...colorAttr}>HOME</SvgButton></NavLink></li>
-                    <li><NavLink to={`${path}/product`} onClick={hideNavDelay}><SvgButton {...colorAttr}>PRODUCTS</SvgButton></NavLink></li>
-                    <li><NavLink to={`${path}/story`} onClick={hideNavDelay}><SvgButton {...colorAttr}>STORY</SvgButton></NavLink></li>
-                    <li><DelayLink to="/"><SvgButton {...colorAttr}>ONLINE SHOP</SvgButton></DelayLink></li>
+                    <li><NavLink to={`${path}/products`} onClick={hideNavDelay}><SvgButton {...colorAttr}>PRODUCTS</SvgButton></NavLink></li>
+                    <li><NavLink to={`${path}/concept`} onClick={hideNavDelay}><SvgButton {...colorAttr}>CONCEPT</SvgButton></NavLink></li>
+                    <li><NavLink to={`${path}/store`} onClick={hideNavDelay}><SvgButton {...colorAttr}>STORE</SvgButton></NavLink></li>
+                    {/*<li><DelayLink to="/"><SvgButton {...colorAttr}>ONLINE STORE</SvgButton></DelayLink></li>*/}
                     <li className="margin" onClick={hideNav}><FaTimesCircle/></li>
                 </ul>
             </nav>

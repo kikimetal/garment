@@ -8,12 +8,14 @@ export default class DelayLink extends React.Component{
         const to = this.props.to
         const delayJump = (e) => {
             e.preventDefault()
+            e.stopPropagation()
             setTimeout(()=>{
-                location.href = to
-            }, 290)
+                // location.href = to
+                window.open(to)
+            }, 320)
         }
         return (
-            <div onTouchTap={delayJump}>
+            <div onClick={delayJump}>
                 {this.props.children}
             </div>
         )

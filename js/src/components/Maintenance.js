@@ -16,7 +16,7 @@ export default class Maintenance extends React.Component{
             color: "white",
             padding: "0.6em 1.2em",
             borderRadius: "4px",
-            fontSize: "14px",
+            fontSize: "8px",
             lineHeight: 1,
             boxShadow: "0 0 3px 0 rgba(0,0,0,0.2)",
             cursor: "pointer",

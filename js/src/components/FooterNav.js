@@ -11,10 +11,10 @@ export default class FooterNav extends React.Component{
     render(){
         return (
             <div className="FooterNav">
-                <div className="info-container">
+                {/*<div className="info-container">
                     <p>ガーメントオンラインショップにて<br className="mobile"/>ご購入いただけます。</p>
-                    <DelayLink to="/"><SvgButton>ONLINE SHOP</SvgButton></DelayLink>
-                </div>
+                    <DelayLink to="/"><SvgButton>ONLINE STORE</SvgButton></DelayLink>
+                </div>*/}
                 <div className="menu-container">
                     <span className="btn" onClick={this.props.onClick}>
                         <SvgButton>MENU</SvgButton>
