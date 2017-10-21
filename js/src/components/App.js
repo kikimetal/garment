@@ -1,3 +1,5 @@
+import {TITLE} from "../define"
+
 import React from "react"
 import ReactDOM from "react-dom"
 import {
@@ -8,8 +10,8 @@ import {
     Redirect
 } from 'react-router-dom'
 import DocumentTitle from "react-document-title"
-import injectTapEventPlugin from "react-tap-event-plugin"
-injectTapEventPlugin()
+// import injectTapEventPlugin from "react-tap-event-plugin"
+// injectTapEventPlugin()
 
 import Entrance from "./Entrance"
 import Garment from "./Garment"
@@ -32,7 +34,7 @@ export default class App extends React.Component{
                     <Maintenance/>
                 */}
 
-                <DocumentTitle title="TakeruYamashita" />
+                <DocumentTitle title={TITLE + " | Takeru Yamashita"} />
 
                 <BrowserRouter>
                     <Switch>

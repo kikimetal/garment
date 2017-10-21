@@ -1,8 +1,9 @@
+import {TITLE, colors} from "../define"
+
 import React from "react"
 import DocumentTitle from "react-document-title"
 import {Switch, NavLink, Link, Route} from "react-router-dom"
 
-import {colors} from "../define"
 import SpreadCircle from "./SpreadCircle"
 import SvgButton from "./SvgButton"
 import DelayLink from "./DelayLink"
@@ -13,16 +14,16 @@ import Footer from "./Footer"
 import News from "./News"
 import FooterNav from "./FooterNav"
 
-
 import Products from "./Products"
 
 export {Products}
 
 export const Home = props => (
     <div className="Home">
+        <DocumentTitle title={TITLE + " | Home"} />
         <EdgeLine/>
-        <ScrollToTopOnMount />
-        <DocumentTitle title="GARMENT" />
+
+        <ScrollToTopOnMount id={props.location.hash}/>
 
         <div className="article">
             <img className="logo reposition-center" src="/image/tag-logo.png" />
@@ -45,7 +46,7 @@ export const Concept = props => (
     <div className="Concept">
         <EdgeLine/>
         <ScrollToTopOnMount />
-        <DocumentTitle title="GARMENT::Concept" />
+        <DocumentTitle title={TITLE + " | Concept"} />
         <h1 className="page-title">CONCEPT</h1>
 
         <div className="article">
@@ -139,7 +140,7 @@ export const Store = () => (
     <div className="Store">
         <EdgeLine/>
         <ScrollToTopOnMount />
-        <DocumentTitle title="GARMENT::Store" />
+        <DocumentTitle title={TITLE + " | Store"} />
         <h1 className="page-title">STORE</h1>
         {/*<div className="article">
             <section className="flex-2">
@@ -200,7 +201,7 @@ export const Contact = () => (
     <div className="Contact">
         <EdgeLine/>
         <ScrollToTopOnMount />
-        <DocumentTitle title="GARMENT::Contact" />
+        <DocumentTitle title={TITLE + " | Contact"} />
         <h1 className="page-title">お問い合わせ<br/><span className="en">Contact</span></h1>
 
         <div className="article">
@@ -243,7 +244,7 @@ export const TermsOfUse = () => (
     <div className="TermsOfUse">
         <EdgeLine/>
         <ScrollToTopOnMount />
-        <DocumentTitle title="GARMENT::TermsOfUse" />
+        <DocumentTitle title={TITLE + " | Terms of use"} />
         <h1 className="page-title">利用規約<br/><span className="en">Terms of Use</span></h1>
 
         <div className="article">
@@ -348,7 +349,7 @@ export const PrivacyPolicy = () => (
     <div className="PrivacyPolicy">
         <EdgeLine/>
         <ScrollToTopOnMount />
-        <DocumentTitle title="GARMENT::TermsOfUse" />
+        <DocumentTitle title={TITLE + " | Privacy policy"} />
         <h1 className="page-title">個人情報保護方針<br/><span className="en">Privacy Policy</span></h1>
 
         <div className="article">

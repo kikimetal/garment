@@ -10,8 +10,11 @@ export default class DelayLink extends React.Component{
             e.preventDefault()
             e.stopPropagation()
             setTimeout(()=>{
-                // location.href = to
-                window.open(to)
+                if (this.props.newWindow){
+                    window.open(to)
+                }else{
+                    location.href = to
+                }
             }, 320)
         }
         return (
@@ -23,4 +26,5 @@ export default class DelayLink extends React.Component{
 }
 DelayLink.defaultProps = {
     to: "/",
+    newWindow: false,
 }

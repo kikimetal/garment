@@ -14,7 +14,7 @@ import MdLabelOutline from "react-icons/lib/md/label-outline"
 export default class News extends React.Component{
     render(){
         return (
-            <div className="News">
+            <div className="News" id="news">
                 <h1 className="common-title"><span className="icon"><MdNotificationsActive/></span> NEWS</h1>
 
                 <div className="flex-2">
@@ -37,7 +37,7 @@ export default class News extends React.Component{
                             ぜひこの機会にご覧ください。<br/>
                             <br/>
                             ＞ガーメント オンラインストア
-                            <DelayLink to="http://takeruyamashita.com/ec/html/">
+                            <DelayLink newWindow to="http://takeruyamashita.com/ec/html/">
                                 <SvgButton size={17} width={255}>GARMENT Online Store</SvgButton>
                             </DelayLink>
                         </div>
@@ -84,7 +84,7 @@ export default class News extends React.Component{
                             </p>
                             <div className="link">
                                 ＞セミナー予約はこちら
-                                <DelayLink to="http://isetan.mistore.jp/store/shinjuku/floor/main_1f/beauty/index.html;jsessionid=GB85ZJQSQ1KRW6qHcC6TjygBKhT6RvQJ8QHR7kBn1JCL4J91n0P8!-675519718">
+                                <DelayLink newWindow to="http://isetan.mistore.jp/store/shinjuku/floor/main_1f/beauty/index.html;jsessionid=GB85ZJQSQ1KRW6qHcC6TjygBKhT6RvQJ8QHR7kBn1JCL4J91n0P8!-675519718">
                                     <SvgButton size={17} width={200}>ISETAN.MISTORE.JP</SvgButton>
                                 </DelayLink>
                             </div>
@@ -150,7 +150,7 @@ export default class News extends React.Component{
                             </p>
                             <div className="link">
                                 ＞イセタン サロン ド パルファン 公式サイト
-                                <DelayLink to="http://www.isetanguide.com/20171018/parfum/index.html">
+                                <DelayLink newWindow to="http://www.isetanguide.com/20171018/parfum/index.html">
                                     <SvgButton size={17} width={220}>SALON DE PARFUM</SvgButton>
                                 </DelayLink>
                             </div>

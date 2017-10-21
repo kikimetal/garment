@@ -79,7 +79,7 @@ export default class SvgButton extends React.Component{
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
             onTouchCancel={handleTouchEnd}
-            onTouchTap={handleTouchStart}>
+            onClick={handleTouchStart}>
                 <svg height={height} width={width}>
                     <rect className="shape" stroke={this.state.shapeColor} strokeDasharray={strokeDasharray} strokeWidth={this.state.hover ? strokeWidthMin : strokeWidthMax} width={width} height={height} strokeDashoffset={strokeDashoffset} />
                     <text className="text" fill={this.state.textColor} x={width / 2} y={size + padding - 3} textAnchor="middle" fontSize={size} width={width}>{innerText}</text>

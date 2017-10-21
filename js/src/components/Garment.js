@@ -1,7 +1,7 @@
 import {colors} from "../define"
 import React from "react"
 import {BrowserRouter, Route, Switch, NavLink} from "react-router-dom"
-import DocumentTitle from "react-document-title"
+// import DocumentTitle from "react-document-title"
 import PropTypes from "prop-types"
 import MdLineWeight from "react-icons/lib/md/line-weight"
 
@@ -64,7 +64,6 @@ export default class Garment extends React.Component{
         const path = this.props.match.path // App.jsより引き継ぎ
         return (
             <div className="Garment">
-                <ScrollToTopOnMount />
 
                 <div className={`nav-btn ${(this.state.isShowNav || this.state.lg) && "hide"}`} onClick={this.showNav}>
                     <MdLineWeight />

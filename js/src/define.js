@@ -6,3 +6,4 @@ export const colors = {
     white: "white",
     filter: "#c3c3c3",
 }
+export const TITLE = "GARMENT ＜ガーメント＞"

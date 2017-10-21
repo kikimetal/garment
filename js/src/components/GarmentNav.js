@@ -51,6 +51,7 @@ export default class GarmentNav extends React.Component{
                 <ul>
                     <li className="margin" onClick={hideNav}></li>
                     <li><NavLink to={`${path}/home`} onClick={hideNavDelay}><SvgButton {...colorAttr}>HOME</SvgButton></NavLink></li>
+                    <li><NavLink to={`${path}/home#news`} onClick={hideNavDelay}><SvgButton {...colorAttr}>NEWS</SvgButton></NavLink></li>
                     <li><NavLink to={`${path}/products`} onClick={hideNavDelay}><SvgButton {...colorAttr}>PRODUCTS</SvgButton></NavLink></li>
                     <li><NavLink to={`${path}/concept`} onClick={hideNavDelay}><SvgButton {...colorAttr}>CONCEPT</SvgButton></NavLink></li>
                     <li><NavLink to={`${path}/store`} onClick={hideNavDelay}><SvgButton {...colorAttr}>STORE</SvgButton></NavLink></li>

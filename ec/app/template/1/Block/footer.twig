@@ -1,0 +1,27 @@
+<div class="container-fluid inner">
+    <div class="row">
+        <ul class="footer-nav col-xs-12 col-sm-4">
+            <li><a href="{{ url('help_about') }}">当サイトについて<svg class="cb cb-angle-right"><use xlink:href="#cb-angle-right" /></svg></a></li>
+            <li><a href="{{ url('help_privacy') }}">プライバシーポリシー<svg class="cb cb-angle-right"><use xlink:href="#cb-angle-right" /></svg></a></li>
+            <li><a href="{{ url('help_tradelaw') }}">特定商取引法に基づく表記<svg class="cb cb-angle-right"><use xlink:href="#cb-angle-right" /></svg></a></li>
+            <li><a href="{{ url('contact') }}">お問い合わせ<svg class="cb cb-angle-right"><use xlink:href="#cb-angle-right" /></svg></a></li>
+        </ul>
+        <ul class="col-xs-12 col-sm-4">
+            {#
+            <li>add category or other menu
+                <svg class="cb cb-angle-right"><use xlink:href="#cb-angle-right" /></svg></li>
+                #}
+        </ul>
+        <div class="footer_logo_area col-xs-12 col-sm-4">
+            <a href="{{ url('homepage') }}">
+                <p class="copy">ガーメントオンラインストア</p>
+                <p class="logo">{{ BaseInfo.shop_name }}</p>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <p class="footer-copyright col-xs-12">
+            <small>copyright (c) {{ BaseInfo.shop_name }} all rights reserved.</small>
+        </p>
+    </div>
+</div>
