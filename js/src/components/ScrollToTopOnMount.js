@@ -5,7 +5,6 @@ export default class ScrollToTopOnMount extends React.Component{
     }
     componentDidMount(){
         const id = this.props.id
-        console.log(id)
         setTimeout(()=>{
             if(id){
                 const py = window.pageYOffset + document.querySelector(id).getBoundingClientRect().top
