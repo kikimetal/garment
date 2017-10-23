@@ -186,7 +186,7 @@ export const Store = () => (
                 ＜関西＞<br/>
                 <b>イセタン メンズスタイル</b><br/><br/>
 
-                〒530-8558<br className="mobile"/>
+                〒530-8558<br/>
                 大阪市北区梅田3-1-3<br className="mobile"/>
                 ルクア イーレ8F<br/><br/>
                 TEL 06-4301-3922<br/>

@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {NavLink} from "react-router-dom"
+import {Link} from "react-router-dom"
 import SvgButton from "./SvgButton"
 import DelayLink from "./DelayLink"
 
@@ -50,11 +50,11 @@ export default class GarmentNav extends React.Component{
                 <div className="logo"></div>
                 <ul>
                     <li className="margin" onClick={hideNav}></li>
-                    <li><NavLink to={`${path}/home`} onClick={hideNavDelay}><SvgButton {...colorAttr}>HOME</SvgButton></NavLink></li>
-                    <li><NavLink to={`${path}/home#news`} onClick={hideNavDelay}><SvgButton {...colorAttr}>NEWS</SvgButton></NavLink></li>
-                    <li><NavLink to={`${path}/products`} onClick={hideNavDelay}><SvgButton {...colorAttr}>PRODUCTS</SvgButton></NavLink></li>
-                    <li><NavLink to={`${path}/concept`} onClick={hideNavDelay}><SvgButton {...colorAttr}>CONCEPT</SvgButton></NavLink></li>
-                    <li><NavLink to={`${path}/store`} onClick={hideNavDelay}><SvgButton {...colorAttr}>STORE</SvgButton></NavLink></li>
+                    <li><Link to={`${path}/home`} onClick={hideNavDelay}><SvgButton {...colorAttr}>HOME</SvgButton></Link></li>
+                    {/*<li><Link to={`${path}/home#news`} onClick={hideNavDelay}><SvgButton {...colorAttr}>NEWS</SvgButton></Link></li>*/}
+                    <li><Link to={`${path}/products`} onClick={hideNavDelay}><SvgButton {...colorAttr}>PRODUCTS</SvgButton></Link></li>
+                    <li><Link to={`${path}/concept`} onClick={hideNavDelay}><SvgButton {...colorAttr}>CONCEPT</SvgButton></Link></li>
+                    <li><Link to={`${path}/store`} onClick={hideNavDelay}><SvgButton {...colorAttr}>STORE</SvgButton></Link></li>
                     {/*<li><DelayLink to="/"><SvgButton {...colorAttr}>ONLINE STORE</SvgButton></DelayLink></li>*/}
                     <li className="margin" onClick={hideNav}><FaTimesCircle/></li>
                 </ul>
