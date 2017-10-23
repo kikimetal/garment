@@ -15,10 +15,11 @@ export default class GarmentNav extends React.Component{
         this.handleDeviceOrientation = this.handleDeviceOrientation.bind(this)
     }
     componentDidMount(){
-        // if(!this.props.show) return
+        if (this.props.ww >= 1024) return
         window.addEventListener("deviceorientation", this.handleDeviceOrientation)
     }
     componentWillUnmount(){
+        if (this.props.ww >= 1024) return
         window.removeEventListener("deviceorientation", this.handleDeviceOrientation)
     }
     handleDeviceOrientation(e){

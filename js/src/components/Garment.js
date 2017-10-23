@@ -68,7 +68,7 @@ export default class Garment extends React.Component{
                 <div className={`nav-btn ${(this.state.isShowNav || this.state.lg) && "hide"}`} onClick={this.showNav}>
                     <MdLineWeight />
                 </div>
-                <GarmentNav path={path} show={this.state.lg ? true : this.state.isShowNav} onClickHideNav={this.hideNav} onClickHideNavDelay={this.hideNavDelay} />
+                <GarmentNav ww={this.state.ww} path={path} show={this.state.lg ? true : this.state.isShowNav} onClickHideNav={this.hideNav} onClickHideNavDelay={this.hideNavDelay} />
 
                 <div className={`page-route-container`}>
                     <Switch>
