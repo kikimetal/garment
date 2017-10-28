@@ -570,8 +570,8 @@
     top: 0;
     left: 0;
     right: 0;
-    width: 53%;
-    height: 36vh;
+    width: 60%;
+    height: 31vh;
     margin: 0 auto;
     background-image: url("/image/logo.png");
     background-repeat: no-repeat;
@@ -580,7 +580,7 @@
   }
   .GarmentNav ul {
     position: absolute;
-    top: 36vh;
+    top: 31vh;
     left: auto;
     right: 0;
     bottom: auto;

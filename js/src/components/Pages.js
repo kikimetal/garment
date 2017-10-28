@@ -142,7 +142,10 @@ export const Store = () => (
         <ScrollToTopOnMount />
         <DocumentTitle title={TITLE + " | Store"} />
         <h1 className="page-title">STORE</h1>
-        {/*<div className="article">
+
+
+        {/*
+        <div className="article">
             <section className="flex-2">
                 <img src="/image/onlinestore.jpg" />
                 <div className="text">
@@ -173,7 +176,10 @@ export const Store = () => (
                     営業時間 10:00〜21:00
                 </div>
             </section>
-        </div>*/}
+        </div>
+        */}
+
+
 
         <div style={{
                 display: "flex",
@@ -181,10 +187,33 @@ export const Store = () => (
                 justifyContent: "center",
                 textAlign:"center",
                 minHeight: "calc(100vh - 300px)",
+                boxSizing: "border-box",
+                padding: "25px 0",
             }}>
-            <div className="text">
+
+            <div className="text" style={{
+                    margin: "25px 50px",
+                    padding: "3em 1em",
+                    background: "#fcfcfc",
+                    borderRadius: "4px",
+                    boxShadow: "0 0 3px 0 rgba(0,0,0,0.1)",
+                }}>
+                ＜オンライン＞<br/>
+                <b>ガーメントオンラインストア</b>
+                <br/>
+
+                <DelayLink to="/ec/html/"><SvgButton width={260}>GARMENT Online Store</SvgButton></DelayLink>
+            </div>
+            <div className="text" style={{
+                    margin: "25px 50px",
+                    padding: "3em 1em",
+                    background: "#fcfcfc",
+                    borderRadius: "4px",
+                    boxShadow: "0 0 3px 0 rgba(0,0,0,0.1)",
+                }}>
                 ＜関西＞<br/>
-                <b>イセタン メンズスタイル</b><br/><br/>
+                <b>イセタン メンズスタイル</b>
+                <br/><br/>
 
                 〒530-8558<br/>
                 大阪市北区梅田3-1-3<br className="mobile"/>
@@ -192,6 +221,7 @@ export const Store = () => (
                 TEL 06-4301-3922<br/>
                 営業時間 10:00〜21:00
             </div>
+
         </div>
 
     </div>
