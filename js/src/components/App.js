@@ -9,7 +9,8 @@ import {
     Switch,
     Redirect
 } from 'react-router-dom'
-import DocumentTitle from "react-document-title"
+// import DocumentTitle from "react-document-title"
+import Helmet from "react-helmet"
 
 import Entrance from "./Entrance"
 import Garment from "./Garment"
@@ -31,9 +32,6 @@ export default class App extends React.Component{
                 {/*
                     <Maintenance/>
                 */}
-
-                <DocumentTitle title={TITLE + " | Takeru Yamashita"} />
-
                 <BrowserRouter>
                     <Switch>
                         {/* <Route exact path="/" component={Entrance} /> */}

@@ -72,14 +72,14 @@ export default class Garment extends React.Component{
 
                 <div className={`page-route-container`}>
                     <Switch>
-                        <Route exact path={path} component={Pages.Home} />
-                        <Route exact path={`${path}/home`} component={Pages.Home} />
-                        <Route path={`${path}/products`} component={Pages.Products} />
-                        <Route exact path={`${path}/concept`} component={Pages.Concept} />
-                        <Route exact path={`${path}/store`} component={Pages.Store} />
-                        <Route exact path={`${path}/contact`} component={Pages.Contact} />
-                        <Route exact path={`${path}/privacy-policy`} component={Pages.PrivacyPolicy} />
-                        <Route exact path={`${path}/terms-of-use`} component={Pages.TermsOfUse} />
+                        <Route exact path="/garment" component={Pages.Home} />
+                        <Route exact path="/garment/home" component={Pages.Home} />
+                        <Route path="/garment/products" component={Pages.Products} />
+                        <Route exact path="/garment/concept" component={Pages.Concept} />
+                        <Route exact path="/garment/store" component={Pages.Store} />
+                        <Route exact path="/garment/contact" component={Pages.Contact} />
+                        <Route exact path="/garment/privacy-policy" component={Pages.PrivacyPolicy} />
+                        <Route exact path="/garment/terms-of-use" component={Pages.TermsOfUse} />
                         <Route component={NotFound} />
                     </Switch>
 

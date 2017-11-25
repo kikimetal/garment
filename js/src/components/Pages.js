@@ -3,6 +3,7 @@ import {TITLE, colors} from "../define"
 import React from "react"
 import DocumentTitle from "react-document-title"
 import {Switch, NavLink, Link, Route} from "react-router-dom"
+import Helmet from "react-helmet"
 
 import SpreadCircle from "./SpreadCircle"
 import SvgButton from "./SvgButton"
@@ -20,7 +21,23 @@ export {Products}
 
 export const Home = props => (
     <div className="Home">
-        <DocumentTitle title={TITLE + " | Home"} />
+
+      <Helmet
+        title={TITLE + " | Home"}
+        meta={[
+          { name: "description", content: "トータルファッションクリエイター山下武尊が創設した、香水ブランドGARMENT（ガーメント）。フレグランスフィルターで香りの質感を自在に変えて楽しむ、「フレグランスフィルタリング」という新しい香りの着こなし方。" },
+          { name: 'twitter:card', content: 'summary' },
+          { name: 'twitter:title', content: TITLE + " | Home" },
+          { name: 'twitter:description', content: "トータルファッションクリエイター山下武尊が創設した、香水ブランドGARMENT（ガーメント）。フレグランスフィルターで香りの質感を自在に変えて楽しむ、「フレグランスフィルタリング」という新しい香りの着こなし方。" },
+          { name: 'twitter:image', content: 'http://www.takeruyamashita.com/image/0.jpg' },
+          { property: 'og:title', content: TITLE + " | Home" },
+          { property: 'og:type', content: 'website' },
+          { property: 'og:url', content: 'https://www.takeruyamashita.com/garment' },
+          { property: 'og:image', content: 'http://www.takeruyamashita.com/image/0.jpg' },
+          { property: 'og:description', content: "トータルファッションクリエイター山下武尊が創設した、香水ブランドGARMENT（ガーメント）。フレグランスフィルターで香りの質感を自在に変えて楽しむ、「フレグランスフィルタリング」という新しい香りの着こなし方。" },
+        ]}
+      />
+
         <EdgeLine/>
 
         <ScrollToTopOnMount id={props.location.hash}/>
