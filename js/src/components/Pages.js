@@ -143,44 +143,40 @@ export const Store = () => (
         <DocumentTitle title={TITLE + " | Store"} />
         <h1 className="page-title">STORE</h1>
 
-
-        {/*
         <div className="article">
             <section className="flex-2">
-                <img src="/image/onlinestore.jpg" />
+                <a href="https://www.takeruyamashita.com/ec/html/"><img src="/image/onlinestore.jpg" /></a>
                 <div className="text">
                     ＜オンライン＞<br/>
                     <b>ガーメントオンラインストア</b>
-                    <DelayLink to="/ec/html/"><SvgButton width={260}>GARMENT Online Store</SvgButton></DelayLink>
+                    <DelayLink to="https://www.takeruyamashita.com/ec/html/"><SvgButton width={260}>GARMENT Online Store</SvgButton></DelayLink>
                 </div>
             </section>
             <section className="flex-2">
-                <img src="/image/takeru.jpg" />
                 <div className="text">
                     ＜関東＞<br/>
-                    <b>伊勢丹新宿店本館1F フレグランスコーナー</b><br/><br/>
+                    <b>伊勢丹新宿店本館1F <br className="mobile"/>
+                        フレグランスコーナー</b><br/>
 
-                    160-0022 東京都新宿区新宿3-14-1<br/>
+                    160-0022<br/>
+                    東京都新宿区新宿3-14-1<br/>
                     TEL 03-3352-1111<br/>
                     営業時間 10:30〜20:00
                 </div>
-            </section>
-            <section className="flex-2">
-                <img src="/image/takeru.jpg" />
                 <div className="text">
                     ＜関西＞<br/>
-                    <b>イセタン メンズスタイル</b><br/><br/>
+                    <b>イセタン メンズスタイル</b><br/>
 
-                    〒530-8558 大阪市北区梅田3-1-3 ルクア イーレ8F<br/>
+                    〒530-8558<br/>
+                    大阪市北区梅田3-1-3 ルクア イーレ8F<br/>
                     TEL 06-4301-3922<br/>
                     営業時間 10:00〜21:00
                 </div>
             </section>
         </div>
-        */}
 
 
-
+        {/*
         <div style={{
                 display: "flex",
                 flexFlow: "column",
@@ -223,6 +219,7 @@ export const Store = () => (
             </div>
 
         </div>
+        */}
 
     </div>
 )

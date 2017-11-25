@@ -922,10 +922,27 @@
   max-width: 100%;
 }
 
-@media screen and (max-width: 770px) {
-  .Store .article .text {
-    padding-bottom: 1.1rem;
-  }
+.Store .article .text {
+  min-height: 260px;
+  margin: 25px 25px;
+  padding: 3em 1em;
+  background: fcfcfc;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .Contact span.en,

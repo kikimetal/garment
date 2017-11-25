@@ -223,6 +223,7 @@ section.common-style .text {
     display: block;
     width: 45%;
   }
+  .flex-2 > a,
   .flex-2 > img,
   .flex-2 > .text {
     -webkit-box-flex: 0;
@@ -230,5 +231,8 @@ section.common-style .text {
     flex: 0 1 48%;
     margin: 1% !important;
     line-height: 1.7;
+  }
+  .flex-2 > a > img {
+    width: 100%;
   }
 }
