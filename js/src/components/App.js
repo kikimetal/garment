@@ -10,15 +10,13 @@ import {
     Redirect
 } from 'react-router-dom'
 import DocumentTitle from "react-document-title"
-// import injectTapEventPlugin from "react-tap-event-plugin"
-// injectTapEventPlugin()
 
 import Entrance from "./Entrance"
 import Garment from "./Garment"
 import NotFound from "./NotFound"
 import SvgButton from "./SvgButton"
 
-import Maintenance from "./Maintenance"
+// import Maintenance from "./Maintenance"
 
 export default class App extends React.Component{
     constructor(props){
@@ -38,7 +36,8 @@ export default class App extends React.Component{
 
                 <BrowserRouter>
                     <Switch>
-                        <Route exact path="/" component={Entrance} />
+                        {/* <Route exact path="/" component={Entrance} /> */}
+                        <Route exact path="/" render={ () => <Redirect to="/garment"/>} />
                         <Route path="/garment" component={Garment} />
                         <Route component={NotFound} />
                     </Switch>

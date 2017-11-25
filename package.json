@@ -41,11 +41,11 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "react-document-title": "^2.0.3",
     "react-icons": "^2.2.5",
     "react-motion": "^0.5.1",
-    "react-parallax": "^1.4.4",
-    "react-tap-event-plugin": "^2.0.1"
+    "react-parallax": "^1.4.4"
   },
   "babel": {
     "presets": [
