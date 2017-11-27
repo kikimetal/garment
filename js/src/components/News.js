@@ -19,27 +19,23 @@ export default class News extends React.Component{
 
                 <div className="flex-2">
 
-
-                    {/*
-                        <NewsSection updateDate="2017.10.27">
-                            <div>
-                                2017.11.01<br/>
-                                伊勢丹新宿店 取扱開始
-                            </div>
-                            <div>
-                                <h1>伊勢丹新宿店 取扱開始</h1>
-                                <br/>
-                                2017年11月1日（水）〜<br/>
-                                伊勢丹新宿店本館1階＝フレグランス<br/>
-                                <br/>
-                                伊勢丹新宿店1Fのフレグランスコーナーにて
-                                11月1日より常設として取り扱いが開始されます。<br/>
-                                <br/>
-                                実際に製品を手にとってご覧ください。
-                            </div>
-                        </NewsSection>
-                    */}
-
+                    <NewsSection updateDate="2017.11.01">
+                        <div>
+                            2017.11.01<br/>
+                            伊勢丹新宿店 取扱開始
+                        </div>
+                        <div>
+                            <h1>伊勢丹新宿店 取扱開始</h1>
+                            <br/>
+                            2017年11月1日（水）〜<br/>
+                            伊勢丹新宿店本館1階＝フレグランスコーナー<br/>
+                            <br/>
+                            伊勢丹新宿店本館にて11月1日より
+                            常設として取り扱いが開始されます。<br/>
+                            <br/>
+                            実際に製品を手にとってご覧ください。
+                        </div>
+                    </NewsSection>
 
                     <NewsSection updateDate="2017.10.27">
                         <div>

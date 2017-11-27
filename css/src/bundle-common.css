@@ -60,19 +60,19 @@ html {
 
 @media screen and (min-width: 1024px) {
   html {
-    --garment-nav-width: 240px;
+    --garment-nav-width: 235px;
   }
 }
 
 @media screen and (min-width: 1300px) {
   html {
-    --garment-nav-width: 280px;
+    --garment-nav-width: 265px;
   }
 }
 
 @media screen and (min-width: 1900px) {
   html {
-    --garment-nav-width: 380px;
+    --garment-nav-width: 385px;
   }
 }
 

@@ -34,10 +34,10 @@ export default class SvgButton extends React.Component{
         const innerText = this.props.children || "Hover"
 
         const strokeWidthMin = 1
-        const strokeWidthMax = ww > 770 ? size * 0.9 : size * 0.7
-
-        // const underlineScale = ww > 640 ? 0.9 : 0.5
-        const underlineScale = 0.5
+        // const strokeWidthMax = ww > 770 ? size * 0.7 : size * 0.5
+        const strokeWidthMax = ww > 770 ? size * 0.3 : size * 0.6
+        // const underlineScale = 0.5
+        const underlineScale = ww > 770 ? 0.4 : 0.5
         const strokeDashoffset = this.state.hover ? 0 : -1 * (width + height + (width*(1 - underlineScale))/2)
         const strokeDasharray = this.state.hover ? `3 4 4 3 4 4 3 4` : `${width * underlineScale} ${width*2 + height*2}`
 

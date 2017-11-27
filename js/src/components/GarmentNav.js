@@ -37,14 +37,12 @@ export default class GarmentNav extends React.Component{
     }
     render(){
         const path = this.props.path
-        const w = 230 // width
         const isShow = this.props.show ? "show" : "hide"
         const hideNav = this.props.onClickHideNav
         const hideNavDelay = this.props.onClickHideNavDelay
-        const colorAttr = {
-            color: "#494949",
-            colorHover: "#060606",
-        }
+        const colorAttr = this.props.ww >= 1024
+          ? { color: "#555", colorHover: "#060606" }
+          : { color: "#222", colorHover: "#060606" }
         return (
             <nav className={`GarmentNav ${isShow}`}>
                 <div className="bg" style={{transform: this.state.bgTranslate}}></div>
@@ -59,6 +57,9 @@ export default class GarmentNav extends React.Component{
                     {/*<li><DelayLink to="/"><SvgButton {...colorAttr}>ONLINE STORE</SvgButton></DelayLink></li>*/}
                     <li className="margin" onClick={hideNav}><FaTimesCircle/></li>
                 </ul>
+                <div className="nav-foot">
+                    <small>copyright &copy; 2017 Maylily Co., Ltd.</small>
+                </div>
             </nav>
         )
     }
