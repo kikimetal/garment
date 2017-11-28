@@ -23,7 +23,7 @@ export const Home = props => (
     <div className="Home">
 
       <Helmet
-        title={TITLE + " | Home"}
+        title={TITLE}
         meta={[
           { name: "description", content: "トータルファッションクリエイター山下武尊が創設した、香水ブランドGARMENT（ガーメント）。フレグランスフィルターで香りの質感を自在に変えて楽しむ、「フレグランスフィルタリング」という新しい香りの着こなし方。" },
           { name: 'twitter:card', content: 'summary' },
