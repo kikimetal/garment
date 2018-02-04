@@ -19,6 +19,22 @@ export default class News extends React.Component{
 
                 <div className="flex-2">
 
+                    <NewsSection updateDate="2018.02.02">
+                        <div>
+                            2018.02.02<br/>
+                            エストネーション ニュウマン店<br/>
+                            ポップアップ開催中
+                        </div>
+                        <div>
+                            <h1>エストネーション ニュウマン店</h1>
+                            <br/>
+                            2018年2月2日 〜 2018年2月15日<br/>
+                            新宿 エストネーション ニュウマン店 にて、<br/>
+                            ポップアップを開催中です。<br/>
+                            実際に製品を手にとってご覧ください。
+                        </div>
+                    </NewsSection>
+
                     <NewsSection updateDate="2017.11.01">
                         <div>
                             2017.11.01<br/>
