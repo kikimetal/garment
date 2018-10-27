@@ -124,7 +124,7 @@ gulp.task("clean", (callback)=>{
     ], callback)
 })
 
-gulp.task("prod", // deployment index
+gulp.task("min", // deployment index
     [
         "clean",
         "apply-prod-environment",

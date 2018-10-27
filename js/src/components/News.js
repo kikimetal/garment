@@ -19,6 +19,28 @@ export default class News extends React.Component{
 
                 <div className="flex-2">
 
+                    <NewsSection updateDate="2018.07.01">
+                        <div>
+                            2018.07.01<br/>
+                            西武池袋本店VITAMAN<br/>
+                            ポップアップ開催中
+                        </div>
+                        <div>
+                            <h1>西武池袋本店VITAMAN</h1>
+                            <br/>
+                            2018年7月1日～7月31日<br/>
+                            西武池袋本店 5階 B-6番地 VITAMAN にて、<br/>
+                            ポップアップを開催中です。<br/>
+                            <br/>
+                            7日・8日両日とも13時～19時は、<br/>
+                            トータルファッションクリエイター 山下武尊が<br/>
+                            ブランドの魅力を紹介いいたします。<br/>
+                            <br/>
+                            ぜひこの機会にお立ち寄りください。<br/>
+                            皆様のご来場を心よりお待ちしております。
+                        </div>
+                    </NewsSection>
+
                     <NewsSection updateDate="2018.02.02">
                         <div>
                             2018.02.02<br/>
